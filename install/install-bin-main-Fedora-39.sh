@@ -81,6 +81,29 @@ killall php
 mkdir -p /home/xtreamcodes
 chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
 chmod -R 0777 /home/xtreamcodes
+rm -f /etc/init.d/mariadb
+mkdir -p /etc/mysql/
+wget https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/my.cnf -O /etc/mysql/my.cnf
+wget https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/my.cnf -O /etc/my.cnf
+mkdir -p /etc/init.d/
+wget https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/mariadb.init -O /etc/init.d/mariadb
+chmod 777 /etc/init.d/mariadb
+service mariadb restart
+wget -q -O "/tmp/xtreamcodes.tar.xz" "https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/main_xtreamcodes_reborn_nobin.tar.xz"
+mkdir -p /home/xtreamcodes/
+tar -zxvf "/tmp/xtreamcodes.tar.xz" -C "/home/xtreamcodes/"
+chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb >/dev/null
+rm -rf /home/xtreamcodes/iptv_xtream_codes/admin 2>/dev/null
+wget -O /tmp/update.zip "https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/update_original.zip" 2>/dev/null
+unzip /tmp/update.zip -d /tmp/update/ >/dev/null
+cp -rf /tmp/update/XtreamUI-master/* /home/xtreamcodes/iptv_xtream_codes/ >/dev/null
+rm -rf /tmp/update/XtreamUI-master >/dev/null
+rm /tmp/update.zip >/dev/null
+rm -rf /tmp/update >/dev/null
+chown -R xtreamcodes:xtreamcodes /home/xtreamcodes/ >/dev/null
+chmod +x /home/xtreamcodes/iptv_xtream_codes/permissions.sh >/dev/null
+/home/xtreamcodes/iptv_xtream_codes/permissions.sh >/dev/null
+find /home/xtreamcodes/ -type d -not \( -name .update -prune \) -exec chmod -R 777 {} + >/dev/null
 cd /home/xtreamcodes
 wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/phpbuild-php7.2-Fedora-39.tar.xz
 tar -xvf phpbuild-php7.2-Fedora-39.tar.xz
