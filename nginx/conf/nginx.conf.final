@@ -1,4 +1,4 @@
-user  odiniptv;
+user  xtreamcodes;
 worker_processes  auto;
 
 worker_rlimit_nofile 300000;
@@ -35,7 +35,7 @@ http {
     server {
         listen 80;listen 25463 ssl;ssl_certificate server.crt;ssl_certificate_key server.key; ssl_protocols SSLv3 TLSv1.1 TLSv1.2;
         index index.php index.html index.htm;
-        root /home/odiniptv/wwwdir/;
+        root /home/xtreamcodes/iptv_xtream_codes/wwwdir/;
         server_tokens off;
         chunked_transfer_encoding off;
 
@@ -60,7 +60,7 @@ http {
 		rewrite ^/server/load.php$ /portal.php break;
 		
 		location /stalker_portal/c {
-			alias /home/odiniptv/wwwdir/c;
+			alias /home/xtreamcodes/iptv_xtream_codes/wwwdir/c;
 		}
 		
 		#FFmpeg Report Progress
@@ -94,7 +94,7 @@ http {
     server {
         listen 25500;
         index index.php index.html index.htm;
-        root /home/odiniptv/admin/;
+        root /home/xtreamcodes/iptv_xtream_codes/admin/;
 
         location ~ \.php$ {
 			limit_req zone=one burst=8;
@@ -115,7 +115,7 @@ http {
 
     server {
         listen 8805;
-        root /home/odiniptv/isp/;
+        root /home/xtreamcodes/iptv_xtream_codes/isp/;
         location / {
             allow 127.0.0.1;
             deny all;
