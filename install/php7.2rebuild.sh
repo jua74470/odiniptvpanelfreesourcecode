@@ -83,6 +83,7 @@ killall php-fpm
 killall php-fpm
 killall php
 killall php
+mkdir -p /home/xtreamcodes
 chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
 chmod -R 0777 /home/xtreamcodes
 rm -rf /home/xtreamcodes/iptv_xtream_codes/php/bin/
