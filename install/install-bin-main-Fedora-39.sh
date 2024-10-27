@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #
-#if (test -f "/usr/bin/wget");then wget -O /root/install-bin-main.sh https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/install-bin-main.sh;fi; if (test -f "/usr/bin/curl");then curl -L --output /root/install-bin-main.sh https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/install-bin-main.sh;fi; bash /root/install-bin-main.sh
+#if (test -f "/usr/bin/wget");then wget -O /root/install-bin-main.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/install/install-bin-main-Fedora-39.sh;fi; if (test -f "/usr/bin/curl");then curl -L --output /root/install-bin-main.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/install/install-bin-main-Fedora-39.sh;fi; bash /root/install-bin-main.sh
 #
 #
 PACKAGE_INSTALLER="dnf -y install"
