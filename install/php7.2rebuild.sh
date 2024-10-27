@@ -462,6 +462,6 @@ rm -rf /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
 rm -rf /home/xtreamcodes/phpbuild/php-7.2.34.tar.xz
 rm -rf /home/xtreamcodes/phpbuild/php7.2_7.2.34-43+ubuntu20.04.1+deb.sury.org+1.debian.tar.xz
 rm -rf /home/xtreamcodes/phpbuild/v1.2.2.zip
-tar -cvf phpbuild-$OS-$VER.tar phpbuild
+tar -cvf phpbuild-php7.2-$OS-$VER.tar phpbuild
 echo "compress xz"
-xz phpbuild-$OS-$VER.tar
+xz phpbuild-php7.2-$OS-$VER.tar
