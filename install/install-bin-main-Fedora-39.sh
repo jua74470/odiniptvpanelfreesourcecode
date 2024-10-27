@@ -178,6 +178,9 @@ wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/uwsgi_params.default
 wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/win-utf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/win-utf
 cd /home/xtreamcodes/phpbuild/php-7.2.34
 make install
+wget -q -O "/tmp/main_xtreamcodes_reborn_php7.2-ext.tar.xz" "https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/main_xtreamcodes_reborn_php7.2-ext.tar.xz"
+mkdir -p /home/xtreamcodes/
+tar -zxvf "/tmp/main_xtreamcodes_reborn_php7.2-ext.tar.xz" -C "/home/xtreamcodes/"
 #cd /home/xtreamcodes/phpbuild/mcrypt-1.0.5
 #/home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
 #make install
