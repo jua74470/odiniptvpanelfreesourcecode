@@ -111,7 +111,6 @@ rm -rf /home/xtreamcodes/iptv_xtream_codes/php/sbin/
 rm -rf /home/xtreamcodes/iptv_xtream_codes/php/var/
 mkdir -p /home/xtreamcodes/iptv_xtream_codes/phpbuild/
 cd /home/xtreamcodes/iptv_xtream_codes/phpbuild/
-rm -rf *
 rm -rf /home/xtreamcodes/iptv_xtream_codes/phpbuild/ngx_http_geoip2_module
 rm -rf /home/xtreamcodes/iptv_xtream_codes/phpbuild/nginx-1.24.0
 rm -rf /home/xtreamcodes/iptv_xtream_codes/phpbuild/openssl-OpenSSL_1_1_1h
@@ -208,6 +207,7 @@ rm -rf /home/xtreamcodes/iptv_xtream_codes/phpbuild/openssl-OpenSSL_1_1_1h
 wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/openssl-OpenSSL_1_1_1h.tar.gz -O /home/xtreamcodes/iptv_xtream_codes/phpbuild/OpenSSL_1_1_1h.tar.gz
 tar -xzvf OpenSSL_1_1_1h.tar.gz
 wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx-1.24.0.tar.gz -O /home/xtreamcodes/iptv_xtream_codes/phpbuild/nginx-1.24.0.tar.gz
+tar -xzvf /home/xtreamcodes/iptv_xtream_codes/phpbuild/nginx-1.24.0.tar.gz
 mkdir -p /home/xtreamcodes/iptv_xtream_codes/phpbuild/nginx_rtmp-1.24.0
 tar -xzvf nginx-1.24.0.tar.gz -C "/home/xtreamcodes/iptv_xtream_codes/phpbuild/nginx_rtmp-1.24.0"
 git clone https://github.com/leev/ngx_http_geoip2_module.git /home/xtreamcodes/iptv_xtream_codes/phpbuild/ngx_http_geoip2_module
