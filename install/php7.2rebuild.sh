@@ -454,4 +454,14 @@ make install
 #./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
 #make -j$(nproc --all)
 #make install
-
+cd /home/xtreamcodes/
+rm -rf /home/xtreamcodes/phpbuild/debian
+rm -rf /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
+rm -rf /home/xtreamcodes/phpbuild/nginx_1.24.0-2ubuntu1.debian.tar.xz
+rm -rf /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
+rm -rf /home/xtreamcodes/phpbuild/php-7.2.34.tar.xz
+rm -rf /home/xtreamcodes/phpbuild/php7.2_7.2.34-43+ubuntu20.04.1+deb.sury.org+1.debian.tar.xz
+rm -rf /home/xtreamcodes/phpbuild/v1.2.2.zip
+tar -cvf phpbuild-$OS-$VER.tar phpbuild
+echo "compress xz"
+xz phpbuild-$OS-$VER.tar
