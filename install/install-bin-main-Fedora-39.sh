@@ -91,7 +91,7 @@ chmod 777 /etc/init.d/mariadb
 service mariadb restart
 wget -q -O "/tmp/xtreamcodes.tar.xz" "https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/main_xtreamcodes_reborn_nobin.tar.xz"
 mkdir -p /home/xtreamcodes/
-tar -zxvf "/tmp/xtreamcodes.tar.xz" -C "/home/xtreamcodes/"
+tar -xvf "/tmp/xtreamcodes.tar.xz" -C "/home/xtreamcodes/"
 chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb >/dev/null
 rm -rf /home/xtreamcodes/iptv_xtream_codes/admin 2>/dev/null
 wget -O /tmp/update.zip "https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/update_original.zip" 2>/dev/null
@@ -180,7 +180,7 @@ cd /home/xtreamcodes/phpbuild/php-7.2.34
 make install
 wget -q -O "/tmp/main_xtreamcodes_reborn_php7.2-ext.tar.xz" "https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/main_xtreamcodes_reborn_php7.2-ext.tar.xz"
 mkdir -p /home/xtreamcodes/
-tar -zxvf "/tmp/main_xtreamcodes_reborn_php7.2-ext.tar.xz" -C "/home/xtreamcodes/"
+tar -xvf "/tmp/main_xtreamcodes_reborn_php7.2-ext.tar.xz" -C "/home/xtreamcodes/"
 #cd /home/xtreamcodes/phpbuild/mcrypt-1.0.5
 #/home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
 #make install
