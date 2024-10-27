@@ -429,7 +429,7 @@ cd /home/xtreamcodes/phpbuild/php-7.2.34
 --with-xsl --enable-opcache --enable-fpm --enable-libxml --enable-static --disable-shared
 make -j$(nproc --all)
 make install
-cd /home/xtreamcodes/iptv_xtream_codes/phpbuild
+cd /home/xtreamcodes/phpbuild
 wget --no-check-certificate -O /home/xtreamcodes/phpbuild/mcrypt-1.0.5.tgz https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/mcrypt-1.0.5.tgz
 tar -xvf /home/xtreamcodes/phpbuild/mcrypt-1.0.5.tgz
 cd /home/xtreamcodes/phpbuild/mcrypt-1.0.5
