@@ -99,25 +99,25 @@ killall nginx
 kill $(ps aux | grep 'xtreamcodes' | grep -v grep | grep -v 'start_services.sh' | awk '{print $2}') 2>/dev/null
 rm -f /home/xtreamcodes/iptv_xtream_codes/nginx/sbin/*
 make install
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/balance.conf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/balance.conf
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi.conf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi.conf
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi.conf.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi.conf.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi_params
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi_params.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/koi-utf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/koi-utf
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/koi-win https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/koi-win
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/mime.types https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/mime.types
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/mime.types.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/mime.types.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/nginx.conf.final
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/nginx.conf.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/scgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/scgi_params
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/scgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/scgi_params.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/server.crt https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/server.crt
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/server.csr https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/server.csr
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/server.key https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/server.key
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/uwsgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/uwsgi_params
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/uwsgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/uwsgi_params.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/win-utf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/win-utf
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/balance.conf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/balance.conf
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi.conf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/fastcgi.conf
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi.conf.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/fastcgi.conf.default
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/fastcgi_params
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/fastcgi_params.default
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/koi-utf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/koi-utf
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/koi-win https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/koi-win
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/mime.types https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/mime.types
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/mime.types.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/mime.types.default
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/nginx.conf.final
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/nginx.conf.default
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/scgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/scgi_params
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/scgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/scgi_params.default
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/server.crt https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/server.crt
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/server.csr https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/server.csr
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/server.key https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/server.key
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/uwsgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/uwsgi_params
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/uwsgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/uwsgi_params.default
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/win-utf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/win-utf
 cd /home/xtreamcodes/phpbuild/nginx-rtmp_nginx-1.24.0
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/"
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/"
@@ -135,21 +135,24 @@ rm -f /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/*
 #cp objs/nginx_rtmp /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/
 make install
 mv /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/nginx /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/nginx_rtmp
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/fastcgi.conf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/fastcgi.conf
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/fastcgi.conf.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/fastcgi.conf.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/fastcgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/fastcgi_params
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/fastcgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/fastcgi_params.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/koi-utf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/koi-utf
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/koi-win https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/koi-win
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/mime.types https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/mime.types
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/mime.types.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/mime.types.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/nginx.conf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/nginx.conf
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/nginx.conf.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/nginx.conf.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/scgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/scgi_params
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/scgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/scgi_params.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/uwsgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/uwsgi_params
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/uwsgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/uwsgi_params.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/win-utf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/win-utf
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/balance.conf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/balance.conf
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/fastcgi.conf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/fastcgi.conf
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/fastcgi.conf.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/fastcgi.conf.default
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/fastcgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/fastcgi_params
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/fastcgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/fastcgi_params.default
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/koi-utf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/koi-utf
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/koi-win https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/koi-win
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/mime.types https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/mime.types
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/mime.types.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/mime.types.default
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/nginx.conf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx_rtmp/conf/nginx.conf
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/scgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/scgi_params
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/scgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/scgi_params.default
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/server.crt https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/server.crt
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/server.csr https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/server.csr
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/server.key https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/server.key
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/uwsgi_params https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/uwsgi_params
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/uwsgi_params.default https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/uwsgi_params.default
+wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/win-utf https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/win-utf
 cd /home/xtreamcodes/phpbuild/php-7.2.34
 make install
 #cd /home/xtreamcodes/phpbuild/mcrypt-1.0.5
