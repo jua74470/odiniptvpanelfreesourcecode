@@ -2,7 +2,7 @@
 # sudo apt-get update
 # sudo apt-get -y install wget
 # sudo yum -y install wget
-# sudo wget https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/php7.2rebuild.sh -O /root/php7.2rebuild.sh && sudo bash /root/php7.2build.sh
+# sudo wget https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/php7.2rebuild.sh -O /root/php7.2rebuild.sh && sudo bash /root/php7.2build.sh
 echo -e "\nChecking that minimal requirements are ok"
 # Ensure the OS is compatible with the launcher
 if [ -f /etc/almalinux-release ]; then
