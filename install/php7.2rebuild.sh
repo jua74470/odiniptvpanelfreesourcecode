@@ -430,30 +430,30 @@ cd /home/xtreamcodes/phpbuild/php-7.2.34
 --with-xsl --enable-opcache --enable-fpm --enable-libxml --enable-static --disable-shared
 make -j$(nproc --all)
 make install
-#cd /home/xtreamcodes/phpbuild
-#wget --no-check-certificate -O /home/xtreamcodes/phpbuild/mcrypt-1.0.5.tgz https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/mcrypt-1.0.5.tgz
-#tar -xvf /home/xtreamcodes/phpbuild/mcrypt-1.0.5.tgz
-#cd /home/xtreamcodes/phpbuild/mcrypt-1.0.5
-#/home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
-#./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
-#make -j$(nproc --all)
-#make install
-#cd /home/xtreamcodes/phpbuild/
-#wget --no-check-certificate -O /home/xtreamcodes/phpbuild/geoip-1.1.1.tgz https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/geoip-1.1.1.tgz
-#tar -xvf /home/xtreamcodes/phpbuild/geoip-1.1.1.tgz
-#cd /home/xtreamcodes/phpbuild/geoip-1.1.1
-#/home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
-#./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
-#make -j$(nproc --all)
-#make install
-#cd /home/xtreamcodes/phpbuild/
-#wget --no-check-certificate -O /home/xtreamcodes/phpbuild/igbinary-3.2.14.tgz https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/igbinary-3.2.14.tgz
-#tar -xvf /home/xtreamcodes/phpbuild/igbinary-3.2.14.tgz
-#cd /home/xtreamcodes/phpbuild/igbinary-3.2.14
-#/home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
-#./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
-#make -j$(nproc --all)
-#make install
+cd /home/xtreamcodes/phpbuild
+wget --no-check-certificate -O /home/xtreamcodes/phpbuild/mcrypt-1.0.5.tgz https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/mcrypt-1.0.5.tgz
+tar -xvf /home/xtreamcodes/phpbuild/mcrypt-1.0.5.tgz
+cd /home/xtreamcodes/phpbuild/mcrypt-1.0.5
+/home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
+./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
+make -j$(nproc --all)
+make install
+cd /home/xtreamcodes/phpbuild/
+wget --no-check-certificate -O /home/xtreamcodes/phpbuild/geoip-1.1.1.tgz https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/geoip-1.1.1.tgz
+tar -xvf /home/xtreamcodes/phpbuild/geoip-1.1.1.tgz
+cd /home/xtreamcodes/phpbuild/geoip-1.1.1
+/home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
+./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
+make -j$(nproc --all)
+make install
+cd /home/xtreamcodes/phpbuild/
+wget --no-check-certificate -O /home/xtreamcodes/phpbuild/igbinary-3.2.14.tgz https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/igbinary-3.2.14.tgz
+tar -xvf /home/xtreamcodes/phpbuild/igbinary-3.2.14.tgz
+cd /home/xtreamcodes/phpbuild/igbinary-3.2.14
+/home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
+./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
+make -j$(nproc --all)
+make install
 cd /home/xtreamcodes/
 rm -rf /home/xtreamcodes/phpbuild/debian
 rm -rf /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
@@ -462,6 +462,9 @@ rm -rf /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
 rm -rf /home/xtreamcodes/phpbuild/php-7.2.34.tar.xz
 rm -rf /home/xtreamcodes/phpbuild/php7.2_7.2.34-43+ubuntu20.04.1+deb.sury.org+1.debian.tar.xz
 rm -rf /home/xtreamcodes/phpbuild/v1.2.2.zip
+rm -rf /home/xtreamcodes/phpbuild/mcrypt-1.0.5.tgz
+rm -rf /home/xtreamcodes/phpbuild/geoip-1.1.1.tgz
+rm -rf /home/xtreamcodes/phpbuild/igbinary-3.2.14.tgz
 tar -cvf phpbuild-php7.2-$OS-$VER.tar phpbuild
 echo "compress xz"
 xz phpbuild-php7.2-$OS-$VER.tar
