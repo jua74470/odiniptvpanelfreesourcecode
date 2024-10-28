@@ -89,7 +89,7 @@ mkdir -p /etc/init.d/
 wget https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/mariadb.init -O /etc/init.d/mariadb
 chmod 777 /etc/init.d/mariadb
 service mariadb restart
-wget -q -O "/tmp/xtreamcodes.tar.xz" "https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/main_xtreamcodes_reborn_nobin.tar.xz"
+wget -q -O "/tmp/xtreamcodes.tar.xz" "https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/main_xtreamcodes_reborn_original.tar.gz"
 mkdir -p /home/xtreamcodes/
 tar -xvf "/tmp/xtreamcodes.tar.xz" -C "/home/xtreamcodes/"
 chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb >/dev/null
