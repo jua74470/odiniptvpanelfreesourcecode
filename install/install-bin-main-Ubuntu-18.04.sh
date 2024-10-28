@@ -78,6 +78,9 @@ killall php-fpm
 killall php-fpm
 killall php
 killall php
+DEBIAN_FRONTEND=noninteractive apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
+DEBIAN_FRONTEND=noninteractive apt-get -y install libwebp6 sudo libjpeg62 libcurl4 libxslt1-dev libgeoip-dev e2fsprogs wget mcrypt nscd htop zip unzip mc mariadb-server
 mkdir -p /home/xtreamcodes
 chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
 chmod -R 0777 /home/xtreamcodes
