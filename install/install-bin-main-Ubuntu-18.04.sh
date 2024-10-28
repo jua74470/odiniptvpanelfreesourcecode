@@ -131,6 +131,7 @@ rm -rf /tmp/update/XtreamUI-master >/dev/null
 rm /tmp/update.zip >/dev/null
 rm -rf /tmp/update >/dev/null
 wget "https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/nginx.conf.final" -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf
+wget "https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/wwwdir/darkino.php" -O /home/xtreamcodes/iptv_xtream_codes/wwwdir/darkino.php
 chown -R xtreamcodes:xtreamcodes /home/xtreamcodes/ >/dev/null
 chmod +x /home/xtreamcodes/iptv_xtream_codes/permissions.sh >/dev/null
 /home/xtreamcodes/iptv_xtream_codes/permissions.sh >/dev/null
