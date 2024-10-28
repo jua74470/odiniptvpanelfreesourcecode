@@ -84,6 +84,7 @@ DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common
 DEBIAN_FRONTEND=noninteractive apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
 DEBIAN_FRONTEND=noninteractive add-apt-repository -y 'deb [arch=amd64,arm64,ppc64el] http://ams2.mirrors.digitalocean.com/mariadb/repo/10.6/ubuntu bionic main'
 DEBIAN_FRONTEND=noninteractive add-apt-repository -y ppa:maxmind/ppa
+DEBIAN_FRONTEND=noninteractive add-apt-repository -y ppa:andykimpe/curl
 DEBIAN_FRONTEND=noninteractive apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y install ubuntu-minimal
 DEBIAN_FRONTEND=noninteractive apt-get -y install ssh
