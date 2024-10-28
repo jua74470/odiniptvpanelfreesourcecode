@@ -530,7 +530,12 @@ if (!isset($_GET["import"])) {
     echo "                                                        <div class=\"form-group row mb-4 stream-url\">\n                                                            <label class=\"col-md-4 col-form-label\" for=\"stream_source\">";
     echo $_["movie_path_or_url"];
     echo "</label>\n                                                            <div class=\"col-md-8 input-group\">\n                                                                <input type=\"text\" id=\"stream_source\" name=\"stream_source\" class=\"form-control\" value=\"";
+    if ($rMovieSource == "") {
+    $rDNS = $rServers[$_INFO["server_id"]]["domain_name"] ? $rServers[$_INFO["server_id"]]["domain_name"] : $rServers[$_INFO["server_id"]]["server_ip"];
+    echo "http://" . $rDNS . ":" . $rServers[$_INFO["server_id"]]["http_broadcast_port"] . "/darkino.php?id=";
+    } else {
     echo $rMovieSource;
+    }
     echo "\" required data-parsley-trigger=\"change\">\n                                                                <div class=\"input-group-append\">\n                                                                    <a href=\"#file-browser\" id=\"filebrowser\" class=\"btn btn-primary waves-effect waves-light\"><i class=\"mdi mdi-folder-open-outline\"></i></a>\n                                                                </div>\n                                                            </div>\n                                                        </div>\n                                                        ";
 } else {
     echo "                                                        <div class=\"form-group row mb-4\">\n                                                            <label class=\"col-md-4 col-form-label\" for=\"import_type\">";
