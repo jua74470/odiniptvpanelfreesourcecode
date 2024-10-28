@@ -80,7 +80,11 @@ killall php
 killall php
 DEBIAN_FRONTEND=noninteractive apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
-DEBIAN_FRONTEND=noninteractive apt-get -yq install software-properties-common
+DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common
+DEBIAN_FRONTEND=noninteractive apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+DEBIAN_FRONTEND=noninteractive add-apt-repository -y 'deb [arch=amd64,arm64,ppc64el] http://ams2.mirrors.digitalocean.com/mariadb/repo/10.6/ubuntu bionic main'
+DEBIAN_FRONTEND=noninteractive add-apt-repository -y ppa:maxmind/ppa
+DEBIAN_FRONTEND=noninteractive apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y install ubuntu-minimal
 DEBIAN_FRONTEND=noninteractive apt-get -y install ssh
 DEBIAN_FRONTEND=noninteractive apt-get -y install libwebp6
@@ -98,6 +102,11 @@ DEBIAN_FRONTEND=noninteractive apt-get -y install zip
 DEBIAN_FRONTEND=noninteractive apt-get -y install unzip
 DEBIAN_FRONTEND=noninteractive apt-get -y install mc
 DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server
+wget http://security.ubuntu.com/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb -O /tmp/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb
+DEBIAN_FRONTEND=noninteractive  dpkg -i /tmp/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb
+DEBIAN_FRONTEND=noninteractive  apt-get -yf install
+DEBIAN_FRONTEND=noninteractive  dpkg -i /tmp/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb
+rm -f /tmp/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb
 mkdir -p /home/xtreamcodes
 chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
 chmod -R 0777 /home/xtreamcodes
