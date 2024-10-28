@@ -41,7 +41,7 @@ fi
 ARCH=$(uname -m)
 
 echo "Detected : $OS  $VER  $ARCH"
-if [[ "$OS" = "Fedora" && "$VER" = "39" && "$ARCH" == "x86_64" ]] ; then
+if [[ "$OS" = "Ubuntu" && "$VER" = "18.04" && "$ARCH" == "x86_64" ]] ; then
 echo "Ok."
 else
     echo "Sorry, this OS is not supported by Xtream UI."
