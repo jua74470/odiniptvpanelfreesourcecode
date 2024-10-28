@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.10
 # -*- coding: utf-8 -*-
 #
-# sudo wget -O /root/install.py3  https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/install-Fedora-39.py3 && sudo python3.10 /root/install.py3
+# sudo wget -O /root/install.py3  https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/install-Ubuntu-18.04.py3 && sudo python3.10 /root/install.py3
 #
 import os
 # os.system('pip install requests >/dev/null')
