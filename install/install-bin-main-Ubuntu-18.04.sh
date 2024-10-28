@@ -80,7 +80,24 @@ killall php
 killall php
 DEBIAN_FRONTEND=noninteractive apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
-DEBIAN_FRONTEND=noninteractive apt-get -y install libwebp6 sudo libjpeg62 libcurl4 libxslt1-dev libgeoip-dev e2fsprogs wget mcrypt nscd htop zip unzip mc mariadb-server
+DEBIAN_FRONTEND=noninteractive apt-get -yq install software-properties-common
+DEBIAN_FRONTEND=noninteractive apt-get -y install ubuntu-minimal
+DEBIAN_FRONTEND=noninteractive apt-get -y install ssh
+DEBIAN_FRONTEND=noninteractive apt-get -y install libwebp6
+DEBIAN_FRONTEND=noninteractive apt-get -y install sudo
+DEBIAN_FRONTEND=noninteractive apt-get -y install libjpeg62
+DEBIAN_FRONTEND=noninteractive apt-get -y install libcurl4
+DEBIAN_FRONTEND=noninteractive apt-get -y install libxslt1-dev
+DEBIAN_FRONTEND=noninteractive apt-get -y install libgeoip-dev
+DEBIAN_FRONTEND=noninteractive apt-get -y install e2fsprogs
+DEBIAN_FRONTEND=noninteractive apt-get -y install wget
+DEBIAN_FRONTEND=noninteractive apt-get -y install mcrypt
+DEBIAN_FRONTEND=noninteractive apt-get -y install nscd
+DEBIAN_FRONTEND=noninteractive apt-get -y install htop
+DEBIAN_FRONTEND=noninteractive apt-get -y install zip
+DEBIAN_FRONTEND=noninteractive apt-get -y install unzip
+DEBIAN_FRONTEND=noninteractive apt-get -y install mc
+DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server
 mkdir -p /home/xtreamcodes
 chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
 chmod -R 0777 /home/xtreamcodes
