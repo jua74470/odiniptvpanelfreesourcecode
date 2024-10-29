@@ -19,10 +19,10 @@ Ubuntu 20.04 use ppa
 
 
 ```
-sudo apt update && sudo apt dist-upgrade -y
-sudo apt install software-properties-common -y
+sudo apt-get update && sudo apt dist-upgrade -y
+sudo apt-get install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa -y
-sudo apt install python3.10-dev -y
+sudo apt-get install python3.10-dev -y
 wget https://bootstrap.pypa.io/get-pip.py -O $HOME/get-pip.py
 sudo python3.10 $HOME/get-pip.py
 sudo sed -i 's|Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin|Defaults    secure_path = /usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin|' /etc/sudoers
@@ -62,9 +62,9 @@ sudo yum -y install  openssl11-devel
 or for Ubuntu <= 18.04/Debian
 
 ```
-sudo apt update && sudo apt dist-upgrade -y
-sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
-sudo apt install libncurses5-dev libdb4o-cil-dev libpcap-dev
+sudo apt-get update && sudo apt dist-upgrade -y
+sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+sudo apt-get install -y libncurses5-dev libdb4o-cil-dev libpcap-dev
 ```
 
 build openssl 1.1.1 (online for old ubuntu version 12.x 14.x 16.x or debian 6 7 8 9)
