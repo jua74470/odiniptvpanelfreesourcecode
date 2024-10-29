@@ -2,7 +2,7 @@
 # sudo apt-get update
 # sudo apt-get -y install wget
 # sudo yum -y install wget
-# sudo wget --no-check-certificate https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/install-bin-main-Ubuntu-13.04.sh -O /root/install-bin-main-Ubuntu-13.04.sh && sudo bash /root/install-bin-main-Ubuntu-13.04.sh
+# sudo wget --no-check-certificate https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/install-bin-main-Ubuntu.sh -O /root/install-bin-main-Ubuntu.sh && sudo bash /root/install-bin-main-Ubuntu.sh
 echo -e "\nChecking that minimal requirements are ok"
 # Ensure the OS is compatible with the launcher
 if [ -f /etc/almalinux-release ]; then
