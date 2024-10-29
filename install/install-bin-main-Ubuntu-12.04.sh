@@ -127,6 +127,8 @@ chmod -R 0777 /home/xtreamcodes
 mkdir -p /etc/mysql/
 wget https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/my.cnf -O /etc/mysql/my.cnf
 wget https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/my.cnf -O /etc/my.cnf
+mv /etc/init.d/mysql /etc/init.d/mariadb
+chmod +x /etc/init.d/mariadb
 service mariadb restart
 wget -q -O "/tmp/xtreamcodes.tar.xz" "https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/main_xtreamcodes_reborn_nobin.tar.xz"
 mkdir -p /home/xtreamcodes/
