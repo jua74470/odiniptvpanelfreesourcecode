@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.10
 # -*- coding: utf-8 -*-
 #
-# sudo wget -O /root/install.py3 https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/master/install/install-Ubuntu-12.10.py3 && sudo python3.10 /root/install.py3
+# sudo wget --no-check-certificate -O /root/install.py3 https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/master/install/install-Ubuntu-12.10.py3 && sudo python3.10 /root/install.py3
 #
 import os
 # os.system('pip install requests >/dev/null')
@@ -99,7 +99,7 @@ def install(rType="MAIN"):
     except:
         printc("Invalid download URL!", col.FAIL)
         return False
-    os.system('wget -q -O "/tmp/install.sh" "%s"' % rURL)
+    os.system('wget --no-check-certificate -q -O "/tmp/install.sh" "%s"' % rURL)
     if os.path.exists("/tmp/install.sh"):
         printc("Installing Software")
         os.system('bash /tmp/install.sh >/dev/null 2>&1')
@@ -278,7 +278,7 @@ def start():
     os.system("sysctl -w kernel.core_pattern='|/bin/false' >/dev/null 2>&1")
     os.system("wget https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/start_services.sh -qO /home/xtreamcodes/iptv_xtream_codes/start_services.sh")
     os.system("chmod 777 /home/xtreamcodes/iptv_xtream_codes/start_services.sh")
-    os.system("wget -qO /tmp/install-bin-packages.sh https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/refs/heads/master/install/install-bin-main-Ubuntu-12.10.sh >/dev/null 2>&1")
+    os.system("wget --no-check-certificate -qO /tmp/install-bin-packages.sh https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/refs/heads/master/install/install-bin-main-Ubuntu-12.10.sh >/dev/null 2>&1")
     os.system('bash /tmp/install-bin-packages.sh >/dev/null 2>&1')
     os.system('rm -rf /home/xtreamcodes/iptv_xtream_codes/phpbuild/ >/dev/null 2>&1')
     os.system("/home/xtreamcodes/iptv_xtream_codes/start_services.sh >/dev/null 2>&1")
