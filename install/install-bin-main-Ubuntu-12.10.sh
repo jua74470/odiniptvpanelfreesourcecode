@@ -53,10 +53,13 @@ sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/
 fi
 cat > /etc/apt/sources.list <<EOF
 deb http://old-releases.ubuntu.com/ubuntu/ quantal main restricted universe multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ precise main restricted universe multiverse
 deb-src http://old-releases.ubuntu.com/ubuntu/ quantal main restricted universe multiverse
 deb http://old-releases.ubuntu.com/ubuntu/ quantal-updates main restricted universe multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse
 deb-src http://old-releases.ubuntu.com/ubuntu/ quantal-updates main restricted universe multiverse
 deb http://old-releases.ubuntu.com/ubuntu quantal-security main restricted universe multiverse
+deb http://old-releases.ubuntu.com/ubuntu precise-security main restricted universe multiverse
 deb-src http://old-releases.ubuntu.com/ubuntu quantal-security main restricted universe multiverse
 deb http://archive.canonical.com/ubuntu quantal partner
 deb-src http://archive.canonical.com/ubuntu quantal partner
