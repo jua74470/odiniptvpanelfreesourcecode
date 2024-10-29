@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #
-#if (test -f "/usr/bin/wget");then wget -O /root/depbuild.sh https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/depbuild.sh;fi; if (test -f "/usr/bin/curl");then curl -L --output /root/depbuild.sh https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/depbuild.sh;fi; bash /root/depbuild.sh
+#if (test -f "/usr/bin/wget");then wget -O /root/depbuild.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/depbuild.sh;fi; if (test -f "/usr/bin/curl");then curl -L --output /root/depbuild.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/depbuild.sh;fi; bash /root/depbuild.sh
 #
 #
 # Ensure the OS is compatible with the launcher
