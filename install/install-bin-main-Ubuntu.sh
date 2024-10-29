@@ -42,7 +42,7 @@ fi
 ARCH=$(uname -m)
 
 echo "Detected : $OS  $VER  $ARCH"
-if [[ "$OS" = "Ubuntu" && ("$VER" = "12.04" || "$VER" = "12.10" || "$VER" = "13.04" || "$VER" = "13.10" || "$VER" = "14.04" || "$VER" = "14.10" || "$VER" = "15.04" || "$VER" = "15.10" || "$VER" = "16.04" || "$VER" = "16.10" || "$VER" = "17.04" || "$VER" = "17.10" || "$VER" = "18.04" || "$VER" = "18.10" || "$VER" = "19.04" || "$VER" = "19.10" || "$VER" = "20.04" || "$VER" = "20.10" || "$VER" = "21.04" || "$VER" = "21.10" || "$VER" = "22.04" || "$VER" = "22.10" || "$VER" = "23.04" || "$VER" = "23.10" || "$VER" = "24.04" "$VER" = "24.10"  ) && "$ARCH" == "x86_64" ]] ; then
+if [[ "$OS" = "Ubuntu" && ("$VER" = "12.04" || "$VER" > "12.04") && "$ARCH" == "x86_64" ]] ; then
 echo "Ok."
 else
     echo "Sorry, this OS is not supported by Xtream UI."
