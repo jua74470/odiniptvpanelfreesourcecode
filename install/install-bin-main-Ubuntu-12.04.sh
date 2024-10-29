@@ -115,6 +115,9 @@ DEBIAN_FRONTEND=noninteractive apt-get -y install unzip
 DEBIAN_FRONTEND=noninteractive apt-get -y install mc
 DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server
 DEBIAN_FRONTEND=noninteractive apt-get -y install libpng12-0
+DEBIAN_FRONTEND=noninteractive apt-get -y install git
+DEBIAN_FRONTEND=noninteractive apt-get -y install libmaxminddb-dev
+DEBIAN_FRONTEND=noninteractive apt-get -y install libpcre3-dev
 mkdir -p /home/xtreamcodes
 chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
 chmod -R 0777 /home/xtreamcodes
@@ -131,11 +134,11 @@ mkdir -p /home/xtreamcodes/
 tar -xvf "/tmp/xtreamcodes.tar.xz" -C "/home/xtreamcodes/"
 chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb >/dev/null
 rm -rf /home/xtreamcodes/iptv_xtream_codes/admin 2>/dev/null
-
 cd /home/xtreamcodes
-wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/phpbuild-php7.2-Fedora-39.tar.xz
-tar -xvf phpbuild-php7.2-Fedora-39.tar.xz
-rm -f phpbuild-php7.2-Fedora-39.tar.xz
+rm -rf phpbuild
+wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/phpbuild-php7.2-Ubuntu-12.04.tar.xz
+tar -xvf phpbuild-php7.2-Ubuntu-12.04.tar.xz
+rm -f phpbuild-php7.2-Ubuntu-12.04.tar.xz
 cd /home/xtreamcodes/phpbuild/nginx_nginx-1.24.0
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx/"
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx/sbin/"
