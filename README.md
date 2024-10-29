@@ -63,8 +63,32 @@ or for Ubuntu 18.04/Debian
 
 ```
 sudo apt update && sudo apt dist-upgrade -y
-sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+sudo apt install libncurses5-dev libdb4o-cil-dev libpcap-dev
 ```
+
+build openssl 1.1.1
+
+```
+cd
+rm -rf openssl*
+rm -rf OpenSSL*
+wget https://github.com/openssl/openssl/archive/refs/heads/OpenSSL_1_1_1-stable.tar.gz
+tar -xvf OpenSSL_1_1_1-stable.tar.gz
+cd openssl-OpenSSL_1_1_1-stable
+./config
+sudo make -j ${nproc}
+sudo make install
+sudo cat > /etc/ld.so.conf.d/libc.conf <<EOF
+# libc default configuration
+/usr/local/lib
+EOF
+ldconfig
+cd
+rm -rf openssl*
+rm -rf OpenSSL*
+```
+
 
 ptyhon3.10 build
 
