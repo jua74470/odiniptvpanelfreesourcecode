@@ -67,7 +67,7 @@ sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libns
 sudo apt install libncurses5-dev libdb4o-cil-dev libpcap-dev
 ```
 
-build openssl 1.1.1
+build openssl 1.1.1 (online for old ubuntu version 12.x 14.x 16.x or debian 6 7 8 9)
 
 ```
 cd
