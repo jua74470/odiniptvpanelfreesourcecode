@@ -115,26 +115,26 @@ def install(rType="MAIN"):
 def mysql(rUsername, rPassword):
     global rMySQLCnf
     printc("Configuring MariaDB- wait maybe slowly")
-    rCreate = True
-    if os.path.exists("/etc/mysql/my.cnf"):
-        shutil.copy("/etc/mysql/my.cnf", "/etc/mysql/my.cnf.xc")
-    if rCreate:
-        os.system('mkdir -p /etc/mysql/ > /dev/null')
-        rFile = open("/etc/mysql/my.cnf", "w")
-        rFile.write(rMySQLCnf)
-        rFile.close()
-    if os.path.exists("/etc/my.cnf"):    
-        shutil.copy("/etc/my.cnf", "/etc/my.cnf.xc")
-    if rCreate:
-        rFile = open("/etc/my.cnf", "w")
-        rFile.write(rMySQLCnf)
-        rFile.close()
-    os.system("rm -rf /etc/systemd/system/mariadb.service.d /etc/systemd/system/multi-user.target.wants/mariadb.service >/dev/null 2>&1")
-    os.system('mkdir -p /etc/init.d/ >/dev/null 2>&1')
-    os.system('touch /etc/init.d/mariadb >/dev/null 2>&1')
-    rFile = open("/etc/init.d/mariadb", "w")
-    rFile.write(rMySQLINIT)
-    rFile.close()
+    #rCreate = True
+    #if os.path.exists("/etc/mysql/my.cnf"):
+    #    shutil.copy("/etc/mysql/my.cnf", "/etc/mysql/my.cnf.xc")
+    #if rCreate:
+    #    os.system('mkdir -p /etc/mysql/ > /dev/null')
+    #    rFile = open("/etc/mysql/my.cnf", "w")
+    #    rFile.write(rMySQLCnf)
+    #    rFile.close()
+    #if os.path.exists("/etc/my.cnf"):    
+    #    shutil.copy("/etc/my.cnf", "/etc/my.cnf.xc")
+    #if rCreate:
+    #    rFile = open("/etc/my.cnf", "w")
+    #    rFile.write(rMySQLCnf)
+    #    rFile.close()
+    #os.system("rm -rf /etc/systemd/system/mariadb.service.d /etc/systemd/system/multi-user.target.wants/mariadb.service >/dev/null 2>&1")
+    #os.system('mkdir -p /etc/init.d/ >/dev/null 2>&1')
+    #os.system('touch /etc/init.d/mariadb >/dev/null 2>&1')
+    #rFile = open("/etc/init.d/mariadb", "w")
+    #rFile.write(rMySQLINIT)
+    #rFile.close()
     os.system("chmod 777 /etc/init.d/mariadb >/dev/null 2>&1")
     os.system("systemctl restart mariadb >/dev/null 2>&1")
     os.system("service mariadb restart >/dev/null 2>&1")
