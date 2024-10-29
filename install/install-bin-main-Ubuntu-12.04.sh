@@ -120,16 +120,13 @@ DEBIAN_FRONTEND=noninteractive apt-get -y install libpng12-0
 DEBIAN_FRONTEND=noninteractive apt-get -y install git
 DEBIAN_FRONTEND=noninteractive apt-get -y install libmaxminddb-dev
 DEBIAN_FRONTEND=noninteractive apt-get -y install libpcre3-dev
+DEBIAN_FRONTEND=noninteractive apt-get -y install libapparmor1
 mkdir -p /home/xtreamcodes
 chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
 chmod -R 0777 /home/xtreamcodes
-rm -f /etc/init.d/mariadb
 mkdir -p /etc/mysql/
 wget https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/my.cnf -O /etc/mysql/my.cnf
 wget https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/my.cnf -O /etc/my.cnf
-mkdir -p /etc/init.d/
-wget https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/mariadb.init -O /etc/init.d/mariadb
-chmod 777 /etc/init.d/mariadb
 service mariadb restart
 wget -q -O "/tmp/xtreamcodes.tar.xz" "https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/main_xtreamcodes_reborn_nobin.tar.xz"
 mkdir -p /home/xtreamcodes/
@@ -227,6 +224,14 @@ cp -rf /tmp/update/XtreamUI-master/* /home/xtreamcodes/iptv_xtream_codes/ >/dev/
 rm -rf /tmp/update/XtreamUI-master >/dev/null
 rm /tmp/update.zip >/dev/null
 rm -rf /tmp/update >/dev/null
+rm -f /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg
+rm -f /home/xtreamcodes/iptv_xtream_codes/bin/ffprobe
+ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg_2018 /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg
+ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffprobe_2018 /home/xtreamcodes/iptv_xtream_codes/bin/ffprobe
+chmod 777 /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg
+chmod 777 /home/xtreamcodes/iptv_xtream_codes/bin/ffprobe
+chmod 777 /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg_2018
+chmod 777 /home/xtreamcodes/iptv_xtream_codes/bin/ffprobe_2018
 wget "https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/nginx/conf/nginx.conf.final" -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf
 wget "https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/wwwdir/darkino.php" -qO /home/xtreamcodes/iptv_xtream_codes/wwwdir/darkino.php >/dev/null
 chattr +i /home/xtreamcodes/iptv_xtream_codes/wwwdir/darkino.php >/dev/null
@@ -234,8 +239,8 @@ wget "https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/mas
 chattr +i /home/xtreamcodes/iptv_xtream_codes/admin/episode.php >/dev/null
 wget "https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/admin/movie.php" -qO /home/xtreamcodes/iptv_xtream_codes/admin/movie.php >/dev/null
 chattr +i /home/xtreamcodes/iptv_xtream_codes/admin/movie.php >/dev/null
-chown -R xtreamcodes:xtreamcodes /home/xtreamcodes/ >/dev/null
+chown -R xtreamcodes:xtreamcodes /home/xtreamcodes/  2>/dev/null
 chmod +x /home/xtreamcodes/iptv_xtream_codes/permissions.sh >/dev/null
-/home/xtreamcodes/iptv_xtream_codes/permissions.sh >/dev/null
+/home/xtreamcodes/iptv_xtream_codes/permissions.sh  2>/dev/null
 find /home/xtreamcodes/ -type d -not \( -name .update -prune \) -exec chmod -R 777 {} + >/dev/null
 
