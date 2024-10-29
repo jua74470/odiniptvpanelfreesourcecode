@@ -59,7 +59,7 @@ sudo yum install -y ncurses-devel sqlite-devel bzip2-devel gdbm-devel xz-devel l
 sudo yum -y install  openssl11-devel
 ```
 
-or for Ubuntu 18.04/Debian
+or for Ubuntu <= 18.04/Debian
 
 ```
 sudo apt update && sudo apt dist-upgrade -y
@@ -83,7 +83,7 @@ sudo cat > /etc/ld.so.conf.d/libc.conf <<EOF
 # libc default configuration
 /usr/local/lib
 EOF
-ldconfig
+sudo ldconfig
 cd
 rm -rf openssl*
 rm -rf OpenSSL*
