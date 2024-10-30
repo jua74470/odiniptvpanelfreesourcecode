@@ -596,19 +596,19 @@ DEBIAN_FRONTEND=noninteractive apt-get -y install libcurl3
 DEBIAN_FRONTEND=noninteractive apt-get -y install libxslt1-dev
 DEBIAN_FRONTEND=noninteractive apt-get -y install libgeoip-dev
 DEBIAN_FRONTEND=noninteractive apt-get -y install e2fsprogs
-DEBIAN_FRONTEND=noninteractive apt-get -y install wget
-cd /tmp
-DEBIAN_FRONTEND=noninteractive apt-get -y install devscripts
-DEBIAN_FRONTEND=noninteractive apt-get -y build-dep wget
-DEBIAN_FRONTEND=noninteractive apt-get -y install libgnutls-dev
-DEBIAN_FRONTEND=noninteractive apt-get source wget
-cd wget-*/
-sed -i "s|wget (|wget (1:|" debian/changelog
-sed -i "s|openssl|gnutls|" debian/rules
-debuild
-cd ..
-dpkg -i wget*.deb
-rm -rf *
+#DEBIAN_FRONTEND=noninteractive apt-get -y install wget
+#cd /tmp
+#DEBIAN_FRONTEND=noninteractive apt-get -y install devscripts
+#DEBIAN_FRONTEND=noninteractive apt-get -y build-dep wget
+#DEBIAN_FRONTEND=noninteractive apt-get -y install libgnutls-dev
+#DEBIAN_FRONTEND=noninteractive apt-get source wget
+#cd wget-*/
+#sed -i "s|wget (|wget (1:|" debian/changelog
+#sed -i "s|openssl|gnutls|" debian/rules
+#debuild
+#cd ..
+#dpkg -i wget*.deb
+#rm -rf *
 DEBIAN_FRONTEND=noninteractive apt-get -y install mcrypt
 DEBIAN_FRONTEND=noninteractive apt-get -y install nscd
 DEBIAN_FRONTEND=noninteractive apt-get -y install htop
