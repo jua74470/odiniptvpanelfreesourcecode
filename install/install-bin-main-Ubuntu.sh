@@ -48,7 +48,43 @@ else
     echo "Sorry, this OS is not supported by Xtream UI."
     exit 1
 fi
-if  [[ "$OS" = "Ubuntu" && "$VER" = "12.04" ||  "$OS" = "Ubuntu" && "$VER" < "14.04" ]] ; then
+if  [[ "$OS" = "Ubuntu" && "$VER" = "12.04" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=old-releases.ubuntu.com
+LTS=precise
+APTLTSSECURE=old-releases.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.2/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-trusty"
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "12.10" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=old-releases.ubuntu.com
+LTS=precise
+APTLTSSECURE=old-releases.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.2/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-trusty"
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "13.04" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=old-releases.ubuntu.com
+LTS=precise
+APTLTSSECURE=old-releases.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.2/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-trusty"
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "13.10" ]] ; then
 APT=old-releases.ubuntu.com
 APTSECURE=old-releases.ubuntu.com
 APTLTS=old-releases.ubuntu.com
@@ -72,7 +108,31 @@ wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943D
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-xenial"
 fi
-if  [[ "$OS" = "Ubuntu" && "$VER" > "14.04" ||  "$OS" = "Ubuntu" && "$VER" < "16.04" ]] ; then
+if  [[ "$OS" = "Ubuntu" && "$VER" = "14.10" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=archive.ubuntu.com
+LTS=truty
+APTLTSSECURE=security.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.4/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-xenial"
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "15.04" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=archive.ubuntu.com
+LTS=truty
+APTLTSSECURE=security.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.4/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-xenial"
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" == "15.10" ||  "$OS" = "Ubuntu" && "$VER" < "16.04" ]] ; then
 APT=old-releases.ubuntu.com
 APTSECURE=old-releases.ubuntu.com
 APTLTS=archive.ubuntu.com
@@ -96,7 +156,31 @@ wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943D
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-16.04"
 fi
-if  [[ "$OS" = "Ubuntu" && "$VER" > "16.04" ||  "$OS" = "Ubuntu" && "$VER" < "18.04" ]] ; then
+if  [[ "$OS" = "Ubuntu" && "$VER" = "16.10" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=archive.ubuntu.com
+LTS=xenial
+APTLTSSECURE=security.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.5/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-16.04"
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "17.01" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=archive.ubuntu.com
+LTS=xenial
+APTLTSSECURE=security.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.5/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-16.04"
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "17.10" ]] ; then
 APT=old-releases.ubuntu.com
 APTSECURE=old-releases.ubuntu.com
 APTLTS=archive.ubuntu.com
@@ -120,7 +204,31 @@ wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943D
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-18.04"
 fi
-if  [[ "$OS" = "Ubuntu" && "$VER" > "18.04" ||  "$OS" = "Ubuntu" && "$VER" < "20.04" ]] ; then
+if  [[ "$OS" = "Ubuntu" && "$VER" = "18.10" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=archive.ubuntu.com
+LTS=bionic
+APTLTSSECURE=security.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.11/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-18.04"
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "19.04" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=archive.ubuntu.com
+LTS=bionic
+APTLTSSECURE=security.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.11/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-18.04"
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "19.10" ]] ; then
 APT=old-releases.ubuntu.com
 APTSECURE=old-releases.ubuntu.com
 APTLTS=archive.ubuntu.com
@@ -144,7 +252,31 @@ wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943D
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-20.04"
 fi
-if  [[ "$OS" = "Ubuntu" && "$VER" > "20.04" ||  "$OS" = "Ubuntu" && "$VER" < "22.04" ]] ; then
+if  [[ "$OS" = "Ubuntu" && "$VER" = "20.10" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=archive.ubuntu.com
+LTS=focal
+APTLTSSECURE=security.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.11/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-20.04"
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "21.04" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=archive.ubuntu.com
+LTS=focal
+APTLTSSECURE=security.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.11/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-20.04"
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "21.10" ]] ; then
 APT=old-releases.ubuntu.com
 APTSECURE=old-releases.ubuntu.com
 APTLTS=archive.ubuntu.com
@@ -170,7 +302,35 @@ APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
-if  [[ "$OS" = "Ubuntu" && "$VER" > "22.04" ||  "$OS" = "Ubuntu" && "$VER" < "24.04" ]] ; then
+if  [[ "$OS" = "Ubuntu" && "$VER" = "22.10" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=archive.ubuntu.com
+LTS=jammy
+APTLTSSECURE=security.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.11/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
+sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "23.04" ]] ; then
+APT=old-releases.ubuntu.com
+APTSECURE=old-releases.ubuntu.com
+APTLTS=archive.ubuntu.com
+LTS=jammy
+APTLTSSECURE=security.ubuntu.com
+APTMARIA='deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.mariadb.asc] https://archive.mariadb.org/mariadb-10.11/repo/ubuntu '$LTS' main'
+APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.launchpad.net/maxmind/ppa/ubuntu '$LTS' main'
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
+wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
+APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
+sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
+fi
+if  [[ "$OS" = "Ubuntu" && "$VER" = "23.10" ]] ; then
 APT=old-releases.ubuntu.com
 APTSECURE=old-releases.ubuntu.com
 APTLTS=archive.ubuntu.com
