@@ -551,7 +551,7 @@ deb-src http://$APTSECURE/ubuntu $CODE-security main restricted universe multive
 #deb http://extras.ubuntu.com/ubuntu $LTS main
 #deb-src http://extras.ubuntu.com/ubuntu $LTS main
 EOF
-echo $APTMARIA > /etc/apt/mariadb.list
+echo $APTMARIA > /etc/apt/sources.list.d/mariadb.list
 echo $APTMAX > /etc/apt/sources.list.d/maxmind-ppa-$CODE.list
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
