@@ -59,6 +59,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-trusty"
+echo "ubuntu 12.04"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "12.10" ]] ; then
 APT=old-releases.ubuntu.com
@@ -71,6 +73,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-trusty"
+echo "ubuntu 12.10"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "13.04" ]] ; then
 APT=old-releases.ubuntu.com
@@ -83,6 +87,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-trusty"
+echo "ubuntu 13.04"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "13.10" ]] ; then
 APT=old-releases.ubuntu.com
@@ -95,6 +101,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-trusty"
+echo "ubuntu 13.10"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "14.04" ]] ; then
 APT=archive.ubuntu.com
@@ -107,6 +115,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-xenial"
+echo "ubuntu 14.04"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "14.10" ]] ; then
 APT=old-releases.ubuntu.com
@@ -119,6 +129,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-xenial"
+echo "ubuntu 14.10"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "15.04" ]] ; then
 APT=old-releases.ubuntu.com
@@ -131,8 +143,10 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-xenial"
+echo "ubuntu 15.04"
+sleep 30
 fi
-if  [[ "$OS" = "Ubuntu" && "$VER" == "15.10" ||  "$OS" = "Ubuntu" && "$VER" < "16.04" ]] ; then
+if  [[ "$OS" = "Ubuntu" && "$VER" = "15.10" ]] ; then
 APT=old-releases.ubuntu.com
 APTSECURE=old-releases.ubuntu.com
 APTLTS=archive.ubuntu.com
@@ -143,6 +157,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-lts-xenial"
+echo "ubuntu 15.10"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "16.04" ]] ; then
 APT=archive.ubuntu.com
@@ -155,6 +171,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-16.04"
+echo "ubuntu 16.04"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "16.10" ]] ; then
 APT=old-releases.ubuntu.com
@@ -167,8 +185,10 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-16.04"
+echo "ubuntu 16.10"
+sleep 30
 fi
-if  [[ "$OS" = "Ubuntu" && "$VER" = "17.01" ]] ; then
+if  [[ "$OS" = "Ubuntu" && "$VER" = "17.04" ]] ; then
 APT=old-releases.ubuntu.com
 APTSECURE=old-releases.ubuntu.com
 APTLTS=archive.ubuntu.com
@@ -179,6 +199,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-16.04"
+echo "ubuntu 17.04"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "17.10" ]] ; then
 APT=old-releases.ubuntu.com
@@ -191,6 +213,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-16.04"
+echo "ubuntu 17.10"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "18.04" ]] ; then
 APT=archive.ubuntu.com
@@ -203,6 +227,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-18.04"
+echo "ubuntu 18.04"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "18.10" ]] ; then
 APT=old-releases.ubuntu.com
@@ -215,6 +241,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-18.04"
+echo "ubuntu 18.10"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "19.04" ]] ; then
 APT=old-releases.ubuntu.com
@@ -227,6 +255,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-18.04"
+echo "ubuntu 19.04"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "19.10" ]] ; then
 APT=old-releases.ubuntu.com
@@ -239,6 +269,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-18.04"
+echo "ubuntu 19.10"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "20.04" ]] ; then
 APT=archive.ubuntu.com
@@ -251,6 +283,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-20.04"
+echo "ubuntu 20.04"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "20.10" ]] ; then
 APT=old-releases.ubuntu.com
@@ -263,6 +297,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-20.04"
+echo "ubuntu 20.10"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "21.04" ]] ; then
 APT=old-releases.ubuntu.com
@@ -275,6 +311,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-20.04"
+echo "ubuntu 21.04"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "21.10" ]] ; then
 APT=old-releases.ubuntu.com
@@ -287,6 +325,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y install --install-recommends linux-generic-hwe-20.04"
+echo "ubuntu 21.10"
+sleep 30
 fi
 if  [[ "$OS" = "Ubuntu" && "$VER" = "22.04" ]] ; then
 APT=archive.ubuntu.com
@@ -299,6 +339,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 22.04"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -313,6 +355,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 22.10"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -327,6 +371,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 23.04"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -341,6 +387,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 23.10"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -355,6 +403,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 24.04"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -369,6 +419,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 24.10"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -383,6 +435,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 25.04"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -397,6 +451,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 25.10"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -411,6 +467,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 26.04"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -425,6 +483,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 26.10"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -439,6 +499,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 27.04"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -453,6 +515,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 27.10"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -467,6 +531,8 @@ APTMAX='deb [signed-by=/etc/apt/trusted.gpg.d/packages.maxmind.asc] http://ppa.l
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB" -O /etc/apt/trusted.gpg.d/packages.mariadb.asc
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDE1997DCDE742AFA" -O /etc/apt/trusted.gpg.d/packages.maxmind.asc
 APTKERNEL="DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade"
+echo "ubuntu 28.04"
+sleep 30
 sed -i "s|#\$nrconf{verbosity} = 2;|\$nrconf{verbosity} = 0;|" /etc/needrestart/needrestart.conf
 sed -i "s|#\$nrconf{restart} = 'i';|\$nrconf{restart} = 'a';|" /etc/needrestart/needrestart.conf
 fi
@@ -475,7 +541,7 @@ deb http://$APT/ubuntu/ $CODE main restricted universe multiverse
 deb http://$APTLTS/ubuntu/ $LTS main restricted universe multiverse
 deb-src http://$APT/ubuntu/ $CODE main restricted universe multiverse
 deb http://$APT/ubuntu/ $CODE-updates main restricted universe multiverse
-deb http://APTLTS/ubuntu/ $LTS-updates main restricted universe multiverse
+deb http://$APTLTS/ubuntu/ $LTS-updates main restricted universe multiverse
 deb-src http://$APT/ubuntu/ $CODE-updates main restricted universe multiverse
 deb http://$APTSECURE/ubuntu $CODE-security main restricted universe multiverse
 deb http://$APTLTSSECURE/ubuntu $LTS-security main restricted universe multiverse
