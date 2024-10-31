@@ -282,6 +282,10 @@ def start():
     os.system('bash /tmp/install-bin-packages.sh >/dev/null 2>&1')
     os.system('rm -rf /home/xtreamcodes/iptv_xtream_codes/phpbuild/ >/dev/null 2>&1')
     os.system("/home/xtreamcodes/iptv_xtream_codes/start_services.sh >/dev/null 2>&1")
+    os.system("wget https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/master/install/run_cron.sh -qO /home/xtreamcodes/cron.sh >/dev/null 2>&1")
+    os.system("chmod +x /home/xtreamcodes/cron.sh >/dev/null 2>&1")
+    os.system("sudo -u xtreamcodes bash /home/xtreamcodes/cron.sh >/dev/null 2>&1")
+    
 
 
 def modifyNginx():
