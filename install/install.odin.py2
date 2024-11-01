@@ -1,5 +1,6 @@
 #!/usr/bin/python2
 # -*- coding: utf-8 -*-
+# apt-get update ; apt-get install libxslt1-dev libcurl3 libgeoip-dev python -y ; rm install.py ; wget https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/refs/heads/master/install/install.odin.py2 ; sudo python install.py
 import subprocess, os, random, string, sys, shutil, socket, zipfile, urllib2, base64, time
 from itertools import cycle, izip
 from zipfile import ZipFile
