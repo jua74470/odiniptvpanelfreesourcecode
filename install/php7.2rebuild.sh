@@ -110,21 +110,73 @@ rm -rf /home/xtreamcodes/iptv_xtream_codes/php/lib/php/peclcmd.php
 rm -rf /home/xtreamcodes/iptv_xtream_codes/php/php/
 rm -rf /home/xtreamcodes/iptv_xtream_codes/php/sbin/
 rm -rf /home/xtreamcodes/iptv_xtream_codes/php/var/
+rm -rf /home/xtreamcodes/phpbuild/
 mkdir -p /home/xtreamcodes/phpbuild/
+cd /home/xtreamcodes/phpbuild/
+rm -rf /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz /home/xtreamcodes/phpbuild/GeoIP-1.6.12
+wget --no-check-certificate https://github.com/maxmind/geoip-api-c/releases/download/v1.6.12/GeoIP-1.6.12.tar.gz -O /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz
+tar -xvf /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz
+cd  /home/xtreamcodes/phpbuild/GeoIP-1.6.12
+./configure --prefix=/usr --enable-static --disable-dependency-tracking
+make -j$(nproc --all)
+make install
+cd /home/xtreamcodes/phpbuild/
+rm -rf /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0.tar.gz /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0
+wget --no-check-certificate https://github.com/maxmind/libmaxminddb/releases/download/1.11.0/libmaxminddb-1.11.0.tar.gz -O /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0.tar.gz
+tar -xvf /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0.tar.gz
+cd /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0
+autoreconf --force --install
+./configure --prefix=/usr/ --enable-static
+make -j$(nproc --all)
+make install
+cd /home/xtreamcodes/phpbuild/
+rm -rf /home/xtreamcodes/phpbuild/pcre-8.45.tar.bz2 /home/xtreamcodes/phpbuild/pcre-8.45
+wget https://sourceforge.net/projects/pcre/files/pcre/8.45/pcre-8.45.tar.bz2 -O /home/xtreamcodes/phpbuild/pcre-8.45.tar.bz2
+tar -xvf /home/xtreamcodes/phpbuild/pcre-8.45.tar.bz2
+cd /home/xtreamcodes/phpbuild/pcre-8.45
+patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.21-multilib.patch)
+patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.32-refused_spelling_terminated.patch)
+patch -p2 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.41-fix_stack_estimator.patch)
+patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.42-Declare-POSIX-regex-function-names-as-macros-to-PCRE.patch)
+patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.44-Inicialize-name-table-memory-region.patch)
+patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.44-JIT-compiler-update-for-Intel-CET.patch)
+patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.44-Pass-mshstk-to-the-compiler-when-Intel-CET-is-enable.patch)
+libtoolize --copy --force
+autoreconf -vif
+./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --enable-jit \
+    --enable-utf \
+    --enable-unicode-properties \
+    --enable-pcre8 \
+    --enable-pcre16 \
+    --enable-pcre32 \
+    --disable-silent-rules
+make -j$(nproc --all)
+make install
+cd /home/xtreamcodes/phpbuild/
+rm -rf zlib-ng-2.2.2.tar.gz 
+wget https://github.com/zlib-ng/zlib-ng/archive/2.2.2/zlib-ng-2.2.2.tar.gz -O /home/xtreamcodes/phpbuild/zlib-ng-2.2.2.tar.gz
+tar -xvf /home/xtreamcodes/phpbuild/zlib-ng-2.2.2.tar.gz
+cd /home/xtreamcodes/phpbuild/zlib-ng-2.2.2
+./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/
+make -j$(nproc --all)
+make install
 cd /home/xtreamcodes/phpbuild/
 rm -rf /home/xtreamcodes/phpbuild/ngx_http_geoip2_module
 rm -rf /home/xtreamcodes/phpbuild/nginx-1.24.0
+rm -rf /home/xtreamcodes/phpbuild/nginx_nginx-1.24.0
+rm -rf /home/xtreamcodes/phpbuild/nginx_nginx-rtmp-1.24.0
+rm -rf /home/xtreamcodes/phpbuild/nginx_nginx_rtmp-1.24.0
 rm -rf /home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h
-wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/openssl-OpenSSL_1_1_1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
+wget --no-check-certificate https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/openssl-OpenSSL_1_1_1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
 tar -xzvf /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
-wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx-1.24.0.tar.gz -O /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
+wget --no-check-certificate https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx-1.24.0.tar.gz -O /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
 tar -xzvf /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
 git clone https://github.com/leev/ngx_http_geoip2_module.git /home/xtreamcodes/phpbuild/ngx_http_geoip2_module
 rm -rf /home/xtreamcodes/phpbuild/v1.2.2.zip
 rm -rf /home/xtreamcodes/phpbuild/nginx-rtmp-module-1.2.2
-wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx-rtmp-module-1.2.2.zip -O /home/xtreamcodes/phpbuild/v1.2.2.zip
+wget --no-check-certificate https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx-rtmp-module-1.2.2.zip -O /home/xtreamcodes/phpbuild/v1.2.2.zip
 unzip /home/xtreamcodes/phpbuild/v1.2.2.zip
-wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx_1.24.0-2ubuntu1.debian.tar.xz -O /home/xtreamcodes/phpbuild/nginx_1.24.0-2ubuntu1.debian.tar.xz
+wget --no-check-certificate https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx_1.24.0-2ubuntu1.debian.tar.xz -O /home/xtreamcodes/phpbuild/nginx_1.24.0-2ubuntu1.debian.tar.xz
 tar -xvf /home/xtreamcodes/phpbuild/nginx_1.24.0-2ubuntu1.debian.tar.xz
 cd /home/xtreamcodes/phpbuild/
 mv nginx-1.24.0 nginx_nginx-1.24.0
@@ -135,13 +187,15 @@ patch -p1 < /home/xtreamcodes/phpbuild/debian/patches/nginx-ssl_cert_cb_yield.pa
 patch -p1 < /home/xtreamcodes/phpbuild/debian/patches/CVE-2023-44487.patch
 patch -p1 < /home/xtreamcodes/phpbuild/debian/patches/ubuntu-branding.patch
 rm -rf /home/xtreamcodes/phpbuild/debian/
-if [ -f "/usr/bin/dpkg-buildflags" ]; then
-    configureend="--with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h --with-ld-opt='$(dpkg-buildflags --get LDFLAGS)' --with-cc-opt='$(dpkg-buildflags --get CFLAGS)'"
-elif [ -f "/usr/bin/rpm" ]; then
-    configureend="--with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h --with-cc-opt='$(rpm --eval %{build_ldflags})' --with-cc-opt='$(rpm --eval %{optflags})'"
-else
-    configureend="--with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h"
-fi
+#if [ -f "/usr/bin/dpkg-buildflags" ]; then
+#    configureend="--with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h --with-ld-opt='$(dpkg-buildflags --get LDFLAGS)' --with-cc-opt='$(dpkg-buildflags --get CFLAGS)'"
+#elif [ -f "/usr/bin/rpm" ]; then
+#    configureend="--with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h --with-cc-opt='$(rpm --eval %{build_ldflags})' --with-cc-opt='$(rpm --eval %{optflags})'"
+#else
+    configureend="--with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h --with-cc-opt='-static -static-libgcc -g -O2 -Wformat -Wall' -' --with-ld-opt='-static -static-libgcc -g -O2 -Wformat -Wall' --with-pcre=/home/xtreamcodes/iptv_xtream_codes/prefix/ --with-zlib=/home/xtreamcodes/iptv_xtream_codes/prefix/"
+#fi
+echo "/home/xtreamcodes/iptv_xtream_codes/prefix/lib" > /etc/ld.so.conf.d/xtreamcodes.conf
+ldconfig
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/nginx \
 --lock-path=/home/xtreamcodes/iptv_xtream_codes/tmp/nginx.lock \
 --conf-path=/home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf \
@@ -167,26 +221,20 @@ fi
 --with-file-aio \
 --with-cpu-opt=generic \
 --add-module=/home/xtreamcodes/phpbuild/ngx_http_geoip2_module \
-"$configureend"
+$configureend
 make -j$(nproc --all)
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx/"
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx/sbin/"
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx/modules"
 mkdir -p  "/home/xtreamcodes/iptv_xtream_codes/nginx/conf"
 mkdir -p  "/home/xtreamcodes/iptv_xtream_codes/logs/"
-killall nginx
-kill $(ps aux | grep 'xtreamcodes' | grep -v grep | grep -v 'start_services.sh' | awk '{print $2}') 2>/dev/null
-killall nginx
-kill $(ps aux | grep 'xtreamcodes' | grep -v grep | grep -v 'start_services.sh' | awk '{print $2}') 2>/dev/null
-killall nginx
-kill $(ps aux | grep 'xtreamcodes' | grep -v grep | grep -v 'start_services.sh' | awk '{print $2}') 2>/dev/null
 rm -f /home/xtreamcodes/iptv_xtream_codes/nginx/sbin/*
 make install
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/balance.conf https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/balance.conf
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi.conf https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi.conf
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi.conf.default https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi.conf.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi_params https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi_params
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi_params.default https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi_params.default
+wget --no-check-certificate -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/balance.conf https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/balance.conf
+wget --no-check-certificate -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi.conf https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi.conf
+wget --no-check-certificate -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi.conf.default https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi.conf.default
+wget --no-check-certificate -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi_params https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi_params
+wget --no-check-certificate -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi_params.default https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi_params.default
 wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/koi-utf https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/koi-utf
 wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/koi-win https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/koi-win
 wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/mime.types https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/mime.types
@@ -266,15 +314,7 @@ mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/"
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/modules"
 mkdir -p  "/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf"
 mkdir -p  "/home/xtreamcodes/iptv_xtream_codes/logs/"
-killall nginx_rtmp
-kill $(ps aux | grep 'xtreamcodes' | grep -v grep | grep -v 'start_services.sh' | awk '{print $2}') 2>/dev/null
-killall nginx_rtmp
-kill $(ps aux | grep 'xtreamcodes' | grep -v grep | grep -v 'start_services.sh' | awk '{print $2}') 2>/dev/null
-killall nginx_rtmp
-kill $(ps aux | grep 'xtreamcodes' | grep -v grep | grep -v 'start_services.sh' | awk '{print $2}') 2>/dev/null
 rm -f /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/*
-#mv objs/nginx objs/nginx_rtmp
-#cp objs/nginx_rtmp /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/
 make install
 mv /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/nginx /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/nginx_rtmp
 wget -O /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/fastcgi.conf https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/nginx_rtmp/conf/fastcgi.conf
@@ -362,7 +402,8 @@ if ! pkg-config libpcre --atleast-version 8.34 ; then
 patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.0.0-oldpcre.patch)
 fi
 #patch -p1 < ../debian/patches/0087-Add-minimal-OpenSSL-3.0-patch.patch
-cd /home/xtreamcodes/phpbuild/php-7.2.34
+export PATH="/usr/bin:/usr/sbin:/home/xtreamcodes/iptv_xtream_codes/prefix/bin:/home/xtreamcodes/iptv_xtream_codes/prefix/sbin"
+export LD_LIBRARY_PATH="/home/xtreamcodes/iptv_xtream_codes/prefix/lib:$LD_LIBRARY_PATH"
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/php \
 --with-zlib-dir --with-freetype-dir=/usr --enable-mbstring --enable-calendar \
 --with-curl --with-gd --disable-rpath --enable-inline-optimization \
