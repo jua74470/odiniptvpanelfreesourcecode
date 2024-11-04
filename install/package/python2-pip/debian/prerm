@@ -1,6 +1,0 @@
-#!/bin/bash
-if [ ! -f /usr/bin/pip ]
-then
-  ln -s /usr/bin/pip3 /usr/bin/pip
-  ln -s /usr/bin/pip3 /usr/bin/pip.link
-fi
