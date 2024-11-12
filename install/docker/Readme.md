@@ -48,7 +48,7 @@ sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/dock
 
 ```
 sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
+```
 
 
 Ubuntu
