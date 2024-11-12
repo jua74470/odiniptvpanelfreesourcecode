@@ -119,7 +119,7 @@ export LIBRARY_PATH="/home/xtreamcodes/iptv_xtream_codes/prefix/lib:$LIBRARY_PAT
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/home/xtreamcodes/iptv_xtream_codes/prefix/lib/pkgconfig
 export CPATH=/home/xtreamcodes/iptv_xtream_codes/prefix/include
 cd /home/xtreamcodes/phpbuild/
-wget https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz
+curl https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz -o wget-1.25.0.tar.gz
 tar -xvf wget-1.25.0.tar.gz
 cd wget-1.25.0
 ./configure --prefix=/usr --sysconfdir=/etc --with-ssl=gnutls
