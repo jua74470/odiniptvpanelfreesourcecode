@@ -111,8 +111,8 @@ rm -rf /home/xtreamcodes/iptv_xtream_codes/php/lib/php/peclcmd.php
 rm -rf /home/xtreamcodes/iptv_xtream_codes/php/php/
 rm -rf /home/xtreamcodes/iptv_xtream_codes/php/sbin/
 rm -rf /home/xtreamcodes/iptv_xtream_codes/php/var/
-rm -rf /home/xtreamcodes/phpbuild/
 mkdir -p /home/xtreamcodes/phpbuild/
+find . ! -name . -prune -type d -exec rm -rf {} +
 cd /home/xtreamcodes/phpbuild/
 export PATH="/usr/bin:/usr/sbin:/home/xtreamcodes/iptv_xtream_codes/prefix/bin:/home/xtreamcodes/iptv_xtream_codes/prefix/sbin"
 export LD_LIBRARY_PATH="/home/xtreamcodes/iptv_xtream_codes/prefix/lib:$LD_LIBRARY_PATH"
