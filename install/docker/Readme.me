@@ -9,22 +9,27 @@ sudo yum -y remove docker \
                   docker-latest-logrotate \
                   docker-logrotate \
                   docker-engine
-
 ```
+
+
 ```
 sudo yum -y install dnf dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-
 ```
+
+
 
 ```
 sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
 ```
+
+
 ```
 sudo rm -f /usr/bin/docker-compose
+```
 
-``````
+
+```
 sudo -i
 cat > /usr/bin/docker-compose <<EOF
 #!/bin/bash
@@ -46,22 +51,26 @@ sudo yum -y remove docker \
                   docker-latest-logrotate \
                   docker-logrotate \
                   docker-engine
-
 ```
+
+
 ```
 sudo yum -y install dnf dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-
 ```
+
+
 
 ```
 sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
 ```
+
+
 ```
 sudo rm -f /usr/bin/docker-compose
+```
 
-``````
+```
 sudo -i
 cat > /usr/bin/docker-compose <<EOF
 #!/bin/bash
@@ -76,8 +85,9 @@ Ubuntu
 
 ```
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get purge $pkg; done
-
 ```
+
+
 ```
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl
@@ -89,17 +99,21 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
-
 ```
+
+
 
 ```
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
 ```
+
+
 ```
 sudo rm -f /usr/bin/docker-compose
+```
 
-``````
+
+```
 sudo -i
 cat > /usr/bin/docker-compose <<EOF
 #!/bin/bash
@@ -116,8 +130,9 @@ Debian
 
 ```
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get purge $pkg; done
-
 ```
+
+
 ```
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl
@@ -129,17 +144,21 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
-
 ```
+
 
 ```
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
 ```
+
+
+
 ```
 sudo rm -f /usr/bin/docker-compose
+```
 
-``````
+
+```
 sudo -i
 cat > /usr/bin/docker-compose <<EOF
 #!/bin/bash
