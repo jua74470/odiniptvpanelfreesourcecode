@@ -28,7 +28,7 @@ sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 Fedora
 
 ```
-sudo yum -y remove docker \
+sudo dnf -y remove docker \
                   docker-client \
                   docker-client-latest \
                   docker-common \
@@ -40,7 +40,7 @@ sudo yum -y remove docker \
 
 
 ```
-sudo yum -y install dnf dnf-plugins-core
+sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 ```
 
