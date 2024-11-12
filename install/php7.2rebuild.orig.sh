@@ -2,8 +2,7 @@
 # sudo apt-get update
 # sudo apt-get -y install curl
 # sudo yum -y install curl
-# sudo curl -L --output /root/php7.2rebuild.orig.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/php7.2rebuild.orig.sh; bash /root/php7.2rebuild.orig.sh
-# sudo wget https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/php7.2rebuild.orig.sh -O /root/php7.2rebuild.orig.sh && sudo bash /root/php7.2rebuild.orig.sh
+# sudo curl -L --output /root/php7.2rebuild.orig.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/installer/install/php7.2rebuild.orig.sh; bash /root/php7.2rebuild.orig.sh
 echo -e "\nChecking that minimal requirements are ok"
 # Ensure the OS is compatible with the launcher
 if [ -f /etc/almalinux-release ]; then
