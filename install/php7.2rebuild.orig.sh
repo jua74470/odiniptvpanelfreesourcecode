@@ -118,6 +118,14 @@ export LD_LIBRARY_PATH="/home/xtreamcodes/iptv_xtream_codes/prefix/lib:$LD_LIBRA
 export LIBRARY_PATH="/home/xtreamcodes/iptv_xtream_codes/prefix/lib:$LIBRARY_PATH"
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/home/xtreamcodes/iptv_xtream_codes/prefix/lib/pkgconfig
 export CPATH=/home/xtreamcodes/iptv_xtream_codes/prefix/include
+cd /home/xtreamcodes/phpbuild/
+wget https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz
+tar -xvf wget-1.25.0.tar.gz
+cd wget-1.25.0
+./configure --prefix=/usr --sysconfdir=/etc --with-ssl=gnutls
+make -j$(nproc --all)
+rm -rf /usr/bin/wget
+make install
 rm -rf /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz /home/xtreamcodes/phpbuild/GeoIP-1.6.12
 wget --no-check-certificate https://github.com/maxmind/geoip-api-c/releases/download/v1.6.12/GeoIP-1.6.12.tar.gz -O /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz
 tar -xvf /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz
