@@ -185,7 +185,7 @@ rm -rf /home/xtreamcodes/phpbuild/nginx_nginx-1.24.0
 rm -rf /home/xtreamcodes/phpbuild/nginx_nginx-rtmp-1.24.0
 rm -rf /home/xtreamcodes/phpbuild/nginx_nginx_rtmp-1.24.0
 rm -rf /home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h
-wget --no-check-certificate https://www.openssl.org/source/openssl-1.1.1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
+wget --no-check-certificate https://git.symas.net/symas-public/openssl/-/archive/OpenSSL_1_1_1h/openssl-OpenSSL_1_1_1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
 tar -xzvf /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
 wget --no-check-certificate http://nginx.org/download/nginx-1.24.0.tar.gz -O /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
 tar -xzvf /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
@@ -288,7 +288,7 @@ patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pc
 patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.44-JIT-compiler-update-for-Intel-CET.patch)
 patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.44-Pass-mshstk-to-the-compiler-when-Intel-CET-is-enable.patch)
 cd /home/xtreamcodes/phpbuild/
-wget https://www.openssl.org/source/openssl-1.1.1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
+wget https://git.symas.net/symas-public/openssl/-/archive/OpenSSL_1_1_1h/openssl-OpenSSL_1_1_1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
 tar -xzvf OpenSSL_1_1_1h.tar.gz
 rm -rf /home/xtreamcodes/phpbuild/nginx-rtmp_nginx-1.24.0
 wget http://nginx.org/download/nginx-1.24.0.tar.gz -O /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
