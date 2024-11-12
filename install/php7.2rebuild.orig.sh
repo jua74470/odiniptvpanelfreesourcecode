@@ -184,9 +184,9 @@ rm -rf /home/xtreamcodes/phpbuild/nginx_nginx-1.24.0
 rm -rf /home/xtreamcodes/phpbuild/nginx_nginx-rtmp-1.24.0
 rm -rf /home/xtreamcodes/phpbuild/nginx_nginx_rtmp-1.24.0
 rm -rf /home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h
-wget --no-check-certificate https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/openssl-OpenSSL_1_1_1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
+wget --no-check-certificate https://www.openssl.org/source/openssl-1.1.1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
 tar -xzvf /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
-wget --no-check-certificate https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx-1.24.0.tar.gz -O /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
+wget --no-check-certificate http://nginx.org/download/nginx-1.24.0.tar.gz -O /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
 tar -xzvf /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
 git clone https://github.com/leev/ngx_http_geoip2_module.git /home/xtreamcodes/phpbuild/ngx_http_geoip2_module
 rm -rf /home/xtreamcodes/phpbuild/v1.2.2.zip
