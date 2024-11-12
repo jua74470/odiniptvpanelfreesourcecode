@@ -15,6 +15,6 @@ sudo docker run -d --name fedora40 \
        -e ROOT_PASSWORD=root \  
        -p 222:22 \  
        -p 80:80 \  
-       -v /my/own/datadir:/var/www/html \  
+       -v /home/xtreamcodes/phpbuild:/home/xtreamcodes/phpbuild \  
        fedora40
 ```
