@@ -120,6 +120,8 @@ export LIBRARY_PATH="/home/xtreamcodes/iptv_xtream_codes/prefix/lib:$LIBRARY_PAT
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/home/xtreamcodes/iptv_xtream_codes/prefix/lib/pkgconfig
 export CPATH=/home/xtreamcodes/iptv_xtream_codes/prefix/include
 cd /home/xtreamcodes/phpbuild/
+echo "build wget"
+sleep 1
 curl https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz -o wget-1.25.0.tar.gz
 tar -xvf wget-1.25.0.tar.gz
 cd wget-1.25.0
@@ -127,6 +129,10 @@ cd wget-1.25.0
 make -j$(nproc --all)
 rm -rf /usr/bin/wget
 make install
+echo "build wget"
+sleep 10
+echo "build GeoIP"
+sleep 1
 rm -rf /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz /home/xtreamcodes/phpbuild/GeoIP-1.6.12
 wget --no-check-certificate https://github.com/maxmind/geoip-api-c/releases/download/v1.6.12/GeoIP-1.6.12.tar.gz -O /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz
 tar -xvf /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz
@@ -134,6 +140,10 @@ cd  /home/xtreamcodes/phpbuild/GeoIP-1.6.12
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --disable-static --disable-dependency-tracking
 make -j$(nproc --all)
 make install
+echo "build GeoIP"
+sleep 10
+echo "build libmaxminddb"
+sleep 1
 cd /home/xtreamcodes/phpbuild/
 rm -rf /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0.tar.gz /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0
 wget --no-check-certificate https://github.com/maxmind/libmaxminddb/releases/download/1.11.0/libmaxminddb-1.11.0.tar.gz -O /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0.tar.gz
@@ -143,6 +153,10 @@ autoreconf --force --install
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --disable-static
 make -j$(nproc --all)
 make install
+echo "build libmaxminddb"
+sleep 10
+echo "download pcre"
+sleep 1
 cd /home/xtreamcodes/phpbuild/
 rm -rf /home/xtreamcodes/phpbuild/pcre-8.45.tar.bz2 /home/xtreamcodes/phpbuild/pcre-8.45
 wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/pcre-8.45.tar.bz2 -O /home/xtreamcodes/phpbuild/pcre-8.45.tar.bz2
@@ -166,11 +180,15 @@ patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pc
 #    --disable-silent-rules --disable-static
 #make -j$(nproc --all)
 #make install
+echo "download pcre"
+sleep 10
 cd /home/xtreamcodes/phpbuild/
 #rm -rf zlib-ng-2.2.2.tar.gz
 #wget https://github.com/zlib-ng/zlib-ng/archive/2.2.2/zlib-ng-2.2.2.tar.gz -O /home/xtreamcodes/phpbuild/zlib-ng-2.2.2.tar.gz
 #tar -xvf /home/xtreamcodes/phpbuild/zlib-ng-2.2.2.tar.gz
 #cd /home/xtreamcodes/phpbuild/zlib-ng-2.2.2
+echo "build zlib"
+sleep 1
 rm -rf /home/xtreamcodes/phpbuild/zlib-1.3.1.tar.gz /home/xtreamcodes/phpbuild/zlib-1.3.1
 wget https://zlib.net/fossils/zlib-1.3.1.tar.gz -O /home/xtreamcodes/phpbuild/zlib-1.3.1.tar.gz
 tar -xvf /home/xtreamcodes/phpbuild/zlib-1.3.1.tar.gz
@@ -178,16 +196,20 @@ tar -xvf /home/xtreamcodes/phpbuild/zlib-1.3.1.tar.gz
 #./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/
 #make -j$(nproc --all)
 #make install
+echo "build zlib"
+sleep 10
 cd /home/xtreamcodes/phpbuild/
+echo "build nginx"
+sleep 1
 rm -rf /home/xtreamcodes/phpbuild/ngx_http_geoip2_module
 rm -rf /home/xtreamcodes/phpbuild/nginx-1.24.0
 rm -rf /home/xtreamcodes/phpbuild/nginx_nginx-1.24.0
 rm -rf /home/xtreamcodes/phpbuild/nginx_nginx-rtmp-1.24.0
 rm -rf /home/xtreamcodes/phpbuild/nginx_nginx_rtmp-1.24.0
 rm -rf /home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h
-wget --no-check-certificate https://git.symas.net/symas-public/openssl/-/archive/OpenSSL_1_1_1h/openssl-OpenSSL_1_1_1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
+wget --no-check-certificate https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/openssl-OpenSSL_1_1_1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
 tar -xzvf /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
-wget --no-check-certificate http://nginx.org/download/nginx-1.24.0.tar.gz -O /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
+wget --no-check-certificate https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx-1.24.0.tar.gz -O /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
 tar -xzvf /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
 git clone https://github.com/leev/ngx_http_geoip2_module.git /home/xtreamcodes/phpbuild/ngx_http_geoip2_module
 rm -rf /home/xtreamcodes/phpbuild/v1.2.2.zip
@@ -288,10 +310,10 @@ patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pc
 patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.44-JIT-compiler-update-for-Intel-CET.patch)
 patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.44-Pass-mshstk-to-the-compiler-when-Intel-CET-is-enable.patch)
 cd /home/xtreamcodes/phpbuild/
-wget https://git.symas.net/symas-public/openssl/-/archive/OpenSSL_1_1_1h/openssl-OpenSSL_1_1_1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
+wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/openssl-OpenSSL_1_1_1h.tar.gz -O /home/xtreamcodes/phpbuild/OpenSSL_1_1_1h.tar.gz
 tar -xzvf OpenSSL_1_1_1h.tar.gz
 rm -rf /home/xtreamcodes/phpbuild/nginx-rtmp_nginx-1.24.0
-wget http://nginx.org/download/nginx-1.24.0.tar.gz -O /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
+wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx-1.24.0.tar.gz -O /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
 tar -xzvf /home/xtreamcodes/phpbuild/nginx-1.24.0.tar.gz
 mkdir -p /home/xtreamcodes/phpbuild/nginx_rtmp-1.24.0
 tar -xzvf nginx-1.24.0.tar.gz -C "/home/xtreamcodes/phpbuild/nginx_rtmp-1.24.0"
