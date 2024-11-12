@@ -2,7 +2,7 @@
 # sudo apt-get update
 # sudo apt-get -y install curl
 # sudo yum -y install curl
-# sudo curl -L --output /root/depbuild.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/depbuild.sh;fi; sudo bash /root/depbuild.sh
+# sudo curl -L --output /root/depbuild.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/95a0518b53d7d0b2c728651fec087386a449dabb/install/depbuild.sh;fi; sudo bash /root/depbuild.sh
 # sudo curl -L --output /root/php7.2rebuild.orig.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/installer/install/php7.2rebuild.orig.sh; sudo bash /root/php7.2rebuild.orig.sh
 echo -e "\nChecking that minimal requirements are ok"
 # Ensure the OS is compatible with the launcher
