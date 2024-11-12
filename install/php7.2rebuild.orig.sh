@@ -144,7 +144,7 @@ make -j$(nproc --all)
 make install
 cd /home/xtreamcodes/phpbuild/
 rm -rf /home/xtreamcodes/phpbuild/pcre-8.45.tar.bz2 /home/xtreamcodes/phpbuild/pcre-8.45
-wget https://sourceforge.net/projects/pcre/files/pcre/8.45/pcre-8.45.tar.bz2 -O /home/xtreamcodes/phpbuild/pcre-8.45.tar.bz2
+wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/pcre-8.45.tar.bz2 -O /home/xtreamcodes/phpbuild/pcre-8.45.tar.bz2
 tar -xvf /home/xtreamcodes/phpbuild/pcre-8.45.tar.bz2
 cd /home/xtreamcodes/phpbuild/pcre-8.45
 patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.21-multilib.patch)
