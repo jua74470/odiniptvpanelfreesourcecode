@@ -21,22 +21,6 @@ sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/dock
 
 ```
 sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-
-
-```
-sudo rm -f /usr/bin/docker-compose
-```
-
-
-```
-sudo -i
-cat > /usr/bin/docker-compose <<EOF
-#!/bin/bash
-docker compose \$@
-EOF
-exit
-```
 
 
 
@@ -63,21 +47,6 @@ sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/dock
 
 ```
 sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-
-
-```
-sudo rm -f /usr/bin/docker-compose
-```
-
-```
-sudo -i
-cat > /usr/bin/docker-compose <<EOF
-#!/bin/bash
-docker compose \$@
-EOF
-exit
-```
 
 
 
@@ -108,21 +77,6 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 ```
 
 
-```
-sudo rm -f /usr/bin/docker-compose
-```
-
-
-```
-sudo -i
-cat > /usr/bin/docker-compose <<EOF
-#!/bin/bash
-docker compose \$@
-EOF
-exit
-```
-
-
 
 
 
@@ -150,6 +104,12 @@ sudo apt-get update
 ```
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
+
+
+
+
+
+Configure docker-compose for all system
 
 
 
