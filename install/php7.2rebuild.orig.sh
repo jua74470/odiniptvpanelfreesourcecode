@@ -322,7 +322,7 @@ rm -rf /home/xtreamcodes/phpbuild/v1.2.2.zip
 rm -rf /home/xtreamcodes/phpbuild/nginx-rtmp-module-1.2.2
 wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx-rtmp-module-1.2.2.zip -O /home/xtreamcodes/phpbuild/v1.2.2.zip
 unzip /home/xtreamcodes/phpbuild/v1.2.2.zip
-wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/nginx/1.24.0-2ubuntu1/nginx_1.24.0-2ubuntu1.debian.tar.xz -O /home/xtreamcodes/phpbuild/nginx_1.24.0-2ubuntu1.debian.tar.xz
+wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/nginx_1.24.0-2ubuntu1.debian.tar.xz -O /home/xtreamcodes/phpbuild/nginx_1.24.0-2ubuntu1.debian.tar.xz
 tar -xvf /home/xtreamcodes/phpbuild/nginx_1.24.0-2ubuntu1.debian.tar.xz
 cd /home/xtreamcodes/phpbuild/
 mv nginx-1.24.0 nginx-rtmp_nginx-1.24.0
