@@ -25,9 +25,11 @@ RUN { \
 
 
 ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/ef07aca1581d88e0f647017dbf32a71523719ac1/install/depbuild.sh /root/
+ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/ef07aca1581d88e0f647017dbf32a71523719ac1/install/php7.2rebuild.orig.sh /root
 
 # timezone
-RUN chmod +x /root/depbuild.sh;
+RUN chmod +x /root/depbuild.sh; \
+    chmod +x /root/php7.2rebuild.orig.sh; \
 
 ENV TZ Europe/Paris
 
