@@ -23,6 +23,12 @@ RUN { \
     } > /usr/local/bin/entry_point.sh; \
     chmod +x /usr/local/bin/entry_point.sh;
 
+ADD https://raw.githubusercontent.com/Homebrew/install/master/install /root
+
+# timezone
+RUN dnf -y update && dnf install -y tzdata; \
+    dnf clean all;
+
 ENV TZ Europe/Paris
 
 ENV ROOT_PASSWORD root
