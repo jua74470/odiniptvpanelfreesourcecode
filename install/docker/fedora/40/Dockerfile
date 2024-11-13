@@ -24,12 +24,12 @@ RUN { \
     chmod +x /usr/local/bin/entry_point.sh;
 
 
-ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/ef07aca1581d88e0f647017dbf32a71523719ac1/install/depbuild.sh /root/
-ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/cfcb04629a5fe6b32f85ec86fc3b6cc4861902db/install/php7.2rebuild.orig.sh /root
+ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/installer/install/depbuild.sh /root/
+ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/installer/install/php7.4rebuild.orig.sh /root
 
 # timezone
 RUN chmod +x /root/depbuild.sh; \
-    chmod +x /root/php7.2rebuild.orig.sh;
+    chmod +x /root/php7.4rebuild.orig.sh;
 
 ENV TZ Europe/Paris
 
