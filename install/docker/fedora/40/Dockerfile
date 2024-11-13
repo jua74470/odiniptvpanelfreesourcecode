@@ -7,7 +7,7 @@ RUN dnf -y update && dnf install -y tzdata; \
 
 # sshd
 RUN mkdir /var/run/sshd; \
-    dnf install -y openssh-server @core; \
+    dnf install -y openssh-server @core curl; \
     ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''; \
     sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd; \
     sed -i 's/^#\(PermitRootLogin\) .*/\1 yes/' /etc/ssh/sshd_config; \
