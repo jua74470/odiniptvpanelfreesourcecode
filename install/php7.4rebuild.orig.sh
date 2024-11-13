@@ -137,7 +137,7 @@ rm -rf /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz /home/xtreamcodes/phpbuild
 wget --no-check-certificate https://github.com/maxmind/geoip-api-c/releases/download/v1.6.12/GeoIP-1.6.12.tar.gz -O /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz
 tar -xvf /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz
 cd  /home/xtreamcodes/phpbuild/GeoIP-1.6.12
-./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --disable-static --disable-dependency-tracking
+./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --libdir=/home/xtreamcodes/iptv_xtream_codes/prefix/lib64 --disable-static --disable-dependency-tracking
 make -j$(nproc --all)
 make install
 echo "build GeoIP"
@@ -150,7 +150,7 @@ wget --no-check-certificate https://github.com/maxmind/libmaxminddb/releases/dow
 tar -xvf /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0.tar.gz
 cd /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0
 autoreconf --force --install
-./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --disable-static
+./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --libdir=/home/xtreamcodes/iptv_xtream_codes/prefix/lib64 --disable-static
 make -j$(nproc --all)
 make install
 echo "build libmaxminddb"
@@ -183,6 +183,11 @@ wget https://zlib.net/fossils/zlib-1.3.1.tar.gz -O /home/xtreamcodes/phpbuild/zl
 tar -xvf /home/xtreamcodes/phpbuild/zlib-1.3.1.tar.gz
 echo "build zlib"
 sleep 10
+export PATH="$PATH:/home/xtreamcodes/iptv_xtream_codes/prefix/bin:/home/xtreamcodes/iptv_xtream_codes/prefix/sbin"
+export LD_LIBRARY_PATH="/home/xtreamcodes/iptv_xtream_codes/prefix/lib64/"
+export LIBRARY_PATH="/home/xtreamcodes/iptv_xtream_codes/prefix/lib64/"
+export PKG_CONFIG_PATH=/home/xtreamcodes/iptv_xtream_codes/prefix/lib64/pkgconfig
+export CPATH=/home/xtreamcodes/iptv_xtream_codes/prefix/include
 cd /home/xtreamcodes/phpbuild/
 echo "build nginx"
 sleep 1
