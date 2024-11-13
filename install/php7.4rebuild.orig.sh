@@ -217,15 +217,6 @@ patch -p1 < /home/xtreamcodes/phpbuild/debian/patches/nginx-ssl_cert_cb_yield.pa
 patch -p1 < /home/xtreamcodes/phpbuild/debian/patches/CVE-2023-44487.patch
 patch -p1 < /home/xtreamcodes/phpbuild/debian/patches/ubuntu-branding.patch
 rm -rf /home/xtreamcodes/phpbuild/debian/
-#if [ -f "/usr/bin/dpkg-buildflags" ]; then
-#    configureend="--with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h --with-ld-opt='$(dpkg-buildflags --get LDFLAGS)' --with-cc-opt='$(dpkg-buildflags --get CFLAGS)'"
-#elif [ -f "/usr/bin/rpm" ]; then
-#    configureend="--with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h --with-cc-opt='$(rpm --eval %{build_ldflags})' --with-cc-opt='$(rpm --eval %{optflags})'"
-#else
-#    configureend="--with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h --with-pcre=/home/xtreamcodes/phpbuild/pcre-8.45 --with-zlib=/home/xtreamcodes/phpbuild/zlib-1.3.1"
-#fi
-#echo "/home/xtreamcodes/iptv_xtream_codes/prefix/lib" > /etc/ld.so.conf.d/xtreamcodes.conf
-#ldconfig
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/nginx \
 --lock-path=/home/xtreamcodes/iptv_xtream_codes/tmp/nginx.lock \
 --conf-path=/home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf \
@@ -252,7 +243,6 @@ rm -rf /home/xtreamcodes/phpbuild/debian/
 --with-cpu-opt=generic \
 --add-module=/home/xtreamcodes/phpbuild/ngx_http_geoip2_module \
 --with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h/ --with-pcre=/home/xtreamcodes/phpbuild/pcre-8.45/ --with-zlib=/home/xtreamcodes/phpbuild/zlib-1.3.1/
-#$configureend
 make -j$(nproc --all)
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx/"
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx/sbin/"
@@ -261,25 +251,6 @@ mkdir -p  "/home/xtreamcodes/iptv_xtream_codes/nginx/conf"
 mkdir -p  "/home/xtreamcodes/iptv_xtream_codes/logs/"
 rm -f /home/xtreamcodes/iptv_xtream_codes/nginx/sbin/*
 make install
-wget --no-check-certificate -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/balance.conf https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/balance.conf
-wget --no-check-certificate -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi.conf https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi.conf
-wget --no-check-certificate -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi.conf.default https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi.conf.default
-wget --no-check-certificate -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi_params https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi_params
-wget --no-check-certificate -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/fastcgi_params.default https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/fastcgi_params.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/koi-utf https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/koi-utf
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/koi-win https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/koi-win
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/mime.types https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/mime.types
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/mime.types.default https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/mime.types.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/nginx.conf.final
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf.default https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/nginx.conf.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/scgi_params https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/scgi_params
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/scgi_params.default https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/scgi_params.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/server.crt https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/server.crt
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/server.csr https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/server.csr
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/server.key https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/server.key
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/uwsgi_params https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/uwsgi_params
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/uwsgi_params.default https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/uwsgi_params.default
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/win-utf https://github.com/amidevous/odiniptvpanelfreesourcecode/raw/master/install/nginx/conf/win-utf
 cd /home/xtreamcodes/phpbuild/
 rm -rf /home/xtreamcodes/phpbuild/ngx_http_geoip2_module
 rm -rf /home/xtreamcodes/phpbuild/nginx_rtmp-1.24.0
@@ -356,7 +327,6 @@ rm -rf /home/xtreamcodes/phpbuild/debian/
 --without-http_rewrite_module \
 --add-module=/home/xtreamcodes/phpbuild/ngx_http_geoip2_module \
 --with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h/ --with-pcre=/home/xtreamcodes/phpbuild/pcre-8.45/ --with-zlib=/home/xtreamcodes/phpbuild/zlib-1.3.1/
-#$configureend
 make -j$(nproc --all)
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/"
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/"
@@ -395,7 +365,7 @@ patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/pla
 patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.8-phpinfo.patch)
 # fix snmp build without DES (from 8.0)
 patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.26-snmp.patch)
-if  [[ "$OS" = "Fedora" && "$VER" >= "36" || "$OS" = "Centos" && "$VER" >= "9" || "$OS" = "Debian" && "$VER" >= "9" || "$OS" = "Ubuntu" && "$VER" >= "18.04" ]] ; then
+if  [[ "$OS" = "Fedora" && "$VER" >= "36" || "$OS" = "Centos" && "$VER" >= "8" || "$OS" = "Debian" && "$VER" >= "8" || "$OS" = "Ubuntu" && "$VER" >= "18.04" ]] ; then
 # compatibility with OpenSSL 3.0, from 8.1
 patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.26-openssl3.patch)
 rm -rf ext/openssl/tests/p12_with_extra_certs.p12
@@ -534,7 +504,7 @@ rm -rf /home/xtreamcodes/phpbuild/v1.2.2.zip
 rm -rf /home/xtreamcodes/phpbuild/mcrypt-1.0.5.tgz
 rm -rf /home/xtreamcodes/phpbuild/geoip-1.1.1.tgz
 rm -rf /home/xtreamcodes/phpbuild/igbinary-3.2.14.tgz
-tar -cvf phpbuild-php7.2-$OS-$VER.tar phpbuild
+tar -cvf phpbuild-php7.4-$OS-$VER.tar phpbuild
 echo "compress xz"
-xz phpbuild-php7.2-$OS-$VER.tar
+xz phpbuild-php7.4-$OS-$VER.tar
 
