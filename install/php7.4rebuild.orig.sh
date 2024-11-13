@@ -507,4 +507,4 @@ rm -rf /home/xtreamcodes/phpbuild/igbinary-3.2.14.tgz
 tar -cvf phpbuild-php7.4-$OS-$VER.tar phpbuild
 echo "compress xz"
 xz phpbuild-php7.4-$OS-$VER.tar
-
+mv /home/xtreamcodes/phpbuild-php7.4-$OS-$VER.tar.xz /home/xtreamcodes/phpbuild/
