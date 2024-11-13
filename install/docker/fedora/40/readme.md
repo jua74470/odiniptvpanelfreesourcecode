@@ -13,5 +13,5 @@ sudo docker build -t fedora40 .
 
 ```
 sudo docker run -d --name fedora40 -e TZ=Europe/Paris -e ROOT_PASSWORD=root -p 22:22 -v /home/xtreamcodes/phpbuild:/home/xtreamcodes/phpbuild fedora40
-sudo docker exec fedora40 -it bash sudo curl -L --output /root/depbuild.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/ef07aca1581d88e0f647017dbf32a71523719ac1/install/depbuild.sh; sudo bash /root/depbuild.sh
+sudo docker exec fedora40 -it bash curl -L --output /root/depbuild.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/ef07aca1581d88e0f647017dbf32a71523719ac1/install/depbuild.sh; bash /root/depbuild.sh
 ```
