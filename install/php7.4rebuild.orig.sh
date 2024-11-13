@@ -365,7 +365,7 @@ patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/pla
 patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.8-phpinfo.patch)
 # fix snmp build without DES (from 8.0)
 patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.26-snmp.patch)
-if  [[ "$OS" = "Fedora" && "$VER" >= "36" || "$OS" = "Centos" && "$VER" >= "8" || "$OS" = "Debian" && "$VER" >= "8" || "$OS" = "Ubuntu" && "$VER" >= "18.04" ]] ; then
+if  [[ "$OS" = "Fedora" && "$VER" -ge "36" || "$OS" = "Centos" && "$VER" -ge "8" || "$OS" = "Debian" && "$VER" -ge "8" || "$OS" = "Ubuntu" && "$VER" -ge "18.04" ]] ; then
 # compatibility with OpenSSL 3.0, from 8.1
 patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.26-openssl3.patch)
 rm -rf ext/openssl/tests/p12_with_extra_certs.p12
