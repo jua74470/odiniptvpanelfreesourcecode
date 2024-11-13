@@ -29,7 +29,7 @@ ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/ef07aca1581d88e0
 
 # timezone
 RUN chmod +x /root/depbuild.sh; \
-    chmod +x /root/php7.2rebuild.orig.sh; \
+    chmod +x /root/php7.2rebuild.orig.sh;
 
 ENV TZ Europe/Paris
 
