@@ -2,8 +2,8 @@
 # sudo apt-get update
 # sudo apt-get -y install curl
 # sudo yum -y install curl
-# sudo curl -L --output /root/depbuild.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/ef07aca1581d88e0f647017dbf32a71523719ac1/install/depbuild.sh; sudo bash /root/depbuild.sh
-# sudo curl -L --output /root/php7.2rebuild.orig.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/ef07aca1581d88e0f647017dbf32a71523719ac1/install/php7.2rebuild.orig.sh; sudo bash /root/php7.2rebuild.orig.sh
+# sudo curl -L --output /root/depbuild.sh https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/master/install/depbuild.sh; sudo bash /root/depbuild.sh
+# sudo curl -L --output /root/php7.2rebuild.orig.sh https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/master/install/php7.4rebuild.orig.sh; sudo bash /root/php7.2rebuild.orig.sh
 echo -e "\nChecking that minimal requirements are ok"
 # Ensure the OS is compatible with the launcher
 if [ -f /etc/almalinux-release ]; then
