@@ -533,10 +533,8 @@ rm -f /home/xtreamcodes/phpbuild/pcre-8.45.tar.bz2
 rm -f /home/xtreamcodes/phpbuild/php-7.4.33.tar.xz
 rm -f /home/xtreamcodes/phpbuild/wget-1.25.0.tar.gz
 rm -f /home/xtreamcodes/phpbuild/zlib-1.3.1.tar.gz
-rm -f /home/xtreamcodes/phpbuild/*.tar.*
-tar -cvf phpbuild-php7.4-$OS-$VER.tar phpbuild
-echo "compress xz"
-xz phpbuild-php7.4-$OS-$VER.tar
+echo "compress tar.xz"
+tar cvfJ phpbuild-php7.4-$OS-$VER.tar.xz phpbuild
 cd /home/xtreamcodes/phpbuild/
 find . ! -name . -prune -type d -exec rm -rf {} +
 mv /home/xtreamcodes/phpbuild-php7.4-$OS-$VER.tar.xz /home/xtreamcodes/phpbuild/
