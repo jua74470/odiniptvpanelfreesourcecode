@@ -5,7 +5,7 @@ sudo systemctl enable docker
 sudo docker stop $(docker ps -a -q)
 sudo docker rm $(docker ps -a -q)
 sudo docker system prune -a -f
-curl https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/d6ffd4a068e5b2c274e70b2db412f51c08cccc4b/install/docker/fedora/40/Dockerfile -o Dockerfile
+curl https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/63be5de876a0d5127c283d05a539d156bd06a93c/install/docker/fedora/40/Dockerfile -o Dockerfile
 sudo docker build -t fedora40 .
 ```
 
