@@ -1,4 +1,5 @@
 FROM fedora:40
+MAINTAINER "jua74470"
 
 # timezone
 RUN dnf -y update && dnf install -y tzdata; \
@@ -6,7 +7,7 @@ RUN dnf -y update && dnf install -y tzdata; \
 
 # sshd
 RUN mkdir /run/sshd; \
-    dnf install -y openssh-server; \
+    dnf install -y openssh-server @core; \
     sed -i 's/^#\(PermitRootLogin\) .*/\1 yes/' /etc/ssh/sshd_config; \
     sed -i 's/^\(UsePAM yes\)/# \1/' /etc/ssh/sshd_config; \
     dnf clean all;
