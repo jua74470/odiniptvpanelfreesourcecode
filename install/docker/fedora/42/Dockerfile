@@ -1,4 +1,4 @@
-FROM fedora:42 
+FROM fedora:42
 MAINTAINER "jua74470"
 
 # timezone
