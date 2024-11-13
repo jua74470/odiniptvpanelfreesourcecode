@@ -126,7 +126,7 @@ curl https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz -o wget-1.25.0.tar.gz
 tar -xvf wget-1.25.0.tar.gz
 cd wget-1.25.0
 ./configure --prefix=/usr --sysconfdir=/etc --with-ssl=gnutls
-make -j$(nproc --all)
+make -j2
 rm -rf /usr/bin/wget
 make install
 echo "build wget"
@@ -138,7 +138,7 @@ wget --no-check-certificate https://github.com/maxmind/geoip-api-c/releases/down
 tar -xvf /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz
 cd  /home/xtreamcodes/phpbuild/GeoIP-1.6.12
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --libdir=/home/xtreamcodes/iptv_xtream_codes/prefix/lib64 --disable-static --disable-dependency-tracking
-make -j$(nproc --all)
+make -j2
 make install
 echo "build GeoIP"
 sleep 10
@@ -151,7 +151,7 @@ tar -xvf /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0.tar.gz
 cd /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0
 autoreconf --force --install
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --libdir=/home/xtreamcodes/iptv_xtream_codes/prefix/lib64 --disable-static
-make -j$(nproc --all)
+make -j2
 make install
 echo "build libmaxminddb"
 sleep 10
@@ -243,7 +243,7 @@ rm -rf /home/xtreamcodes/phpbuild/debian/
 --with-cpu-opt=generic \
 --add-module=/home/xtreamcodes/phpbuild/ngx_http_geoip2_module \
 --with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h/ --with-pcre=/home/xtreamcodes/phpbuild/pcre-8.45/ --with-zlib=/home/xtreamcodes/phpbuild/zlib-1.3.1/
-make -j$(nproc --all)
+make -j2
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx/"
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx/sbin/"
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx/modules"
@@ -331,7 +331,7 @@ rm -rf /home/xtreamcodes/phpbuild/debian/
 --without-http_rewrite_module \
 --add-module=/home/xtreamcodes/phpbuild/ngx_http_geoip2_module \
 --with-openssl=/home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h/ --with-pcre=/home/xtreamcodes/phpbuild/pcre-8.45/ --with-zlib=/home/xtreamcodes/phpbuild/zlib-1.3.1/
-make -j$(nproc --all)
+make -j2
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/"
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/"
 mkdir -p "/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/modules"
@@ -475,7 +475,7 @@ touch configure.ac
 --enable-libxml \
 --enable-static \
 --disable-shared
-make -j$(nproc --all)
+make -j2
 make install
 echo "build php"
 sleep 10
@@ -487,7 +487,7 @@ tar -xvf /home/xtreamcodes/phpbuild/mcrypt-1.0.5.tgz
 cd /home/xtreamcodes/phpbuild/mcrypt-1.0.5
 /home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
 ./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
-make -j$(nproc --all)
+make -j2
 make install
 echo "build php mcrypt"
 sleep 10
@@ -499,7 +499,7 @@ tar -xvf /home/xtreamcodes/phpbuild/geoip-1.1.1.tgz
 cd /home/xtreamcodes/phpbuild/geoip-1.1.1
 /home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
 ./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
-make -j$(nproc --all)
+make -j2
 make install
 echo "build php geoip"
 sleep 10
@@ -511,7 +511,7 @@ tar -xvf /home/xtreamcodes/phpbuild/igbinary-3.2.14.tgz
 cd /home/xtreamcodes/phpbuild/igbinary-3.2.14
 /home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
 ./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
-make -j$(nproc --all)
+make -j2
 make install
 echo "build php igbinary"
 sleep 10
