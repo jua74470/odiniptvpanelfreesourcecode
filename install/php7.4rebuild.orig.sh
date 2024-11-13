@@ -169,17 +169,6 @@ patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pc
 patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.44-Inicialize-name-table-memory-region.patch)
 patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.44-JIT-compiler-update-for-Intel-CET.patch)
 patch -p1 < <(wget -qO- https://src.fedoraproject.org/rpms/pcre/raw/rawhide/f/pcre-8.44-Pass-mshstk-to-the-compiler-when-Intel-CET-is-enable.patch)
-#libtoolize --copy --force
-#autoreconf -vif
-#./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --enable-jit \
-#    --enable-utf \
-#    --enable-unicode-properties \
-#    --enable-pcre8 \
-#    --enable-pcre16 \
-#    --enable-pcre32 \
-#    --disable-silent-rules --disable-static
-#make -j$(nproc --all)
-#make install
 echo "download pcre"
 sleep 10
 cd /home/xtreamcodes/phpbuild/
@@ -192,10 +181,6 @@ sleep 1
 rm -rf /home/xtreamcodes/phpbuild/zlib-1.3.1.tar.gz /home/xtreamcodes/phpbuild/zlib-1.3.1
 wget https://zlib.net/fossils/zlib-1.3.1.tar.gz -O /home/xtreamcodes/phpbuild/zlib-1.3.1.tar.gz
 tar -xvf /home/xtreamcodes/phpbuild/zlib-1.3.1.tar.gz
-#cd /home/xtreamcodes/phpbuild/zlib-1.3.1
-#./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/
-#make -j$(nproc --all)
-#make install
 echo "build zlib"
 sleep 10
 cd /home/xtreamcodes/phpbuild/
@@ -377,153 +362,100 @@ rm -f /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/*
 make install
 mv /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/nginx /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/nginx_rtmp
 cd /home/xtreamcodes/phpbuild/
-#wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/php7.2_7.2.34-43+ubuntu20.04.1+deb.sury.org+1.debian.tar.xz
-#tar -xvf php7.2_7.2.34-43+ubuntu20.04.1+deb.sury.org+1.debian.tar.xz
-wget https://github.com/GNOME/libxml2/archive/refs/tags/v2.9.1.tar.gz -O /home/xtreamcodes/phpbuild/libxml2-2.9.1.tar.gz
-tar -xvf /home/xtreamcodes/phpbuild/libxml2-2.9.1.tar.gz
-cd /home/xtreamcodes/phpbuild/libxml2-2.9.1
-./autogen.sh
-./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --disable-static
-make -j$(nproc --all)
-make install
-cd /home/xtreamcodes/phpbuild/openssl-OpenSSL_1_1_1h/
-make distclean
-./config --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --openssldir=/home/xtreamcodes/iptv_xtream_codes/prefix/etc/ssl
-make -j$(nproc --all)
-make install
-cd /home/xtreamcodes/phpbuild/zlib-1.3.1
-make distclean
-./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/
-make -j$(nproc --all)
-make install
-cd /home/xtreamcodes/phpbuild/
-wget https://sourceware.org/pub/bzip2/bzip2-1.0.6.tar.gz
-tar -xvf bzip2-1.0.6.tar.gz
-cd bzip2-1.0.6
-make PREFIX=/home/xtreamcodes/iptv_xtream_codes/prefix/ -j$(nproc --all)
-make PREFIX=/home/xtreamcodes/iptv_xtream_codes/prefix/ install
-cd /home/xtreamcodes/phpbuild/
-wget https://ftp.gnu.org/gnu/nettle/nettle-3.7.1.tar.gz
-tar -xvf nettle-3.7.1.tar.gz
-cd /home/xtreamcodes/phpbuild/nettle-3.7.1
-./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --disable-static
-make -j$(nproc --all)
-make install
-cp ./nettle.pc /home/xtreamcodes/iptv_xtream_codes/prefix/lib/pkgconfig/
-cp ./hogweed.pc /home/xtreamcodes/iptv_xtream_codes/prefix/lib/pkgconfig/
-cd /home/xtreamcodes/phpbuild/
-wget https://gmplib.org/download/gmp/gmp-6.0.0.tar.xz -O /home/xtreamcodes/phpbuild/gmp-6.0.0.tar.xz
-tar -xvf /home/xtreamcodes/phpbuild/gmp-6.0.0.tar.xz
-cd /home/xtreamcodes/phpbuild/gmp-6.0.0
-./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --disable-static
-make -j$(nproc --all)
-make install
-cat > /home/xtreamcodes/iptv_xtream_codes/prefix/lib/pkgconfig/gmp.pc <<EOF
-prefix=/home/xtreamcodes/iptv_xtream_codes/prefix
-exec_prefix=\${prefix}
-libdir=\${exec_prefix}/lib64
-includedir=\${prefix}/include
-Name: GMP
-Version: 6.0.0
-Libs: -L\${libdir} -lgmp
-Cflags: -I\${includedir}
-EOF
-
-
-
-
-cd /home/xtreamcodes/phpbuild/
-wget https://www.gnupg.org/ftp/gcrypt/gnutls/v3.3/gnutls-3.3.29.tar.xz
-tar -xvf gnutls-3.3.29.tar.xz
-cd /home/xtreamcodes/phpbuild/gnutls-3.3.29
-./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --disable-static
-make -j$(nproc --all)
-make install
-
-
-cd /home/xtreamcodes/phpbuild/
-wget https://github.com/curl/curl/archive/refs/tags/curl-7_29_0.tar.gz
-tar -xvf curl-7_29_0.tar.gz
-cd curl-curl-7_29_0
-./buildconf
-./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/prefix/ --with-gnutls --disable-static
-make -j$(nproc --all)
-make install
-
-
-
-
-
-cd /home/xtreamcodes/phpbuild/
 wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/php-7.4.33.tar.xz -O /home/xtreamcodes/phpbuild/php-7.4.33.tar.xz
 tar -xvf /home/xtreamcodes/phpbuild/php-7.4.33.tar.xz
 cd /home/xtreamcodes/phpbuild/php-7.4.33
 #add Remi Colet Security Patch
 # Build fixes
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.1.7-httpd.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.1.33-intl.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.2.0-includedir.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-5.6.3-embed.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-5.3.0-recode.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.2.0-libdb.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.0.7-curl.patch)
-# backported from 8.0
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-net-snmp.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.0-httpd.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.2.0-includedir.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.0-embed.patch)
+# For libxml 2.12 from 8.1
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.33-libxml212.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.2.0-libdb.patch)
+if  [[ "$OS" = "Centos" && "$VER" = "6" || "$OS" = "Centos" && "$VER" = "7" ]] ; then
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.0.7-curl.patch)
+fi
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.33-gcc14.patch)
 # Functional changes
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.2.4-dlopen.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.2.16-systzdata-v17.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.3.3-systzdata-v19.patch)
 # See http://bugs.php.net/53436
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.2.12-phpize.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.0-phpize.patch)
 # Use -lldap_r for OpenLDAP
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.2.3-ldap_r.patch)
-# Make php_config.h constant across builds (from 7.4)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.2.32-fixheader.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.0-ldap_r.patch)
+# Ignore unsupported "threads" option on password_hash
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.20-argon2.patch)
 # drop "Configure command" from phpinfo output
 # and add build system and provider (from 8.0)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.2.32-phpinfo.patch)
-# getallheaders for FPM backported from 7.3
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.2.8-getallheaders.patch)
-# backport PDOStatement::getColumnMeta from 7.4
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.2.16-pdooci.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.8-phpinfo.patch)
+# fix snmp build without DES (from 8.0)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.26-snmp.patch)
+if  [[ "$OS" = "Fedora" && "$VER" >= "36" || "$OS" = "Centos" && "$VER" >= "9" || "$OS" = "Debian" && "$VER" >= "9" || "$OS" = "Ubuntu" && "$VER" >= "18.04" ]] ; then
+# compatibility with OpenSSL 3.0, from 8.1
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.26-openssl3.patch)
+rm -rf ext/openssl/tests/p12_with_extra_certs.p12
+fi
 # RC Patch
 patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.2.0-oci8conf.patch)
 # Security fixes (200+)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug77423.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug80672.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug80710.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug81122.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug76450.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug81211.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug81026.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug79971.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug81719.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug81720.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug81727.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug81726.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug81738.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug81740.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug81744.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-bug81746.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-cve-2023-0662.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-cve-2023-3247.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-cve-2023-3823.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-cve-2023-3824.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-cve-2024-2756.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-cve-2024-3096.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-cve-2024-5458.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-cve-2024-8925.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-cve-2024-8926.patch)
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-cve-2024-8927.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-bug81740.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-bug81744.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-bug81746.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-cve-2023-0662.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-cve-2023-3247.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-cve-2023-3823.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-cve-2023-3824.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-cve-2024-2756.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-cve-2024-3096.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-cve-2024-5458.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-cve-2024-8925.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-cve-2024-8926.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-cve-2024-8927.patch)
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-cve-2024-9026.patch)
 # Fixes for tests (300+)
 # Factory is droped from system tzdata
-patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.0.10-datetests.patch)
-#if ! pkg-config libpcre --atleast-version 8.34 ; then
-# Only apply when system libpcre < 8.34
-#patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php72/php.git/plain/php-7.0.0-oldpcre.patch)
-#fi
-#patch -p1 < ../debian/patches/0087-Add-minimal-OpenSSL-3.0-patch.patch
-cd /home/xtreamcodes/phpbuild/php-7.2.34
-#
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.0.10-datetests.patch)
+# Make test slower
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.33-tests.patch)
+# For zlib-ng
+patch -p1 < <(wget -qO- https://git.remirepo.net/cgit/rpms/scl-php74/php.git/plain/php-7.4.33-zlib-tests.patch)
+cd /home/xtreamcodes/phpbuild/php-7.4.33
+# ----- Manage known as failed test -------
+# affected by systzdata patch
+rm -rf ext/date/tests/timezone_location_get.phpt
+rm -rfext/date/tests/bug33414-1.phpt
+rm -rf ext/date/tests/date_modify-1.phpt
+rm -rf ext/date/tests/bug33415-2.phpt
+# too fast builder
+rm -rf ext/date/tests/bug73837.phpt
+# fails sometime
+rm -rf ext/sockets/tests/mcast_ipv?_recv.phpt
+# Should be skipped but fails sometime
+rm -rf ext/standard/tests/file/file_get_contents_error001.phpt
+# cause stack exhausion
+rm -rf Zend/tests/bug54268.phpt
+rm -rf Zend/tests/bug68412.phpt
+# slow and erratic result
+rm -rf sapi/cli/tests/upload_2G.phpt
+# tar issue
+rm -rf ext/zlib/tests/004-mb.phpt
+# https://bugs.php.net/63362 - Not needed but installed headers.
+# Drop some Windows specific headers to avoid installation,
+# before build to ensure they are really not needed.
+rm -f TSRM/tsrm_win32.h \
+      TSRM/tsrm_config.w32.h \
+      Zend/zend_config.w32.h \
+      ext/mysqlnd/config-win.h \
+      ext/standard/winver.h \
+      main/win32_internal_function_disabled.h \
+      main/win95nt.h
+# Fix some bogus permissions
+find . -name \*.[ch] -exec chmod 644 {} \;
+libtoolize --force --copy
+cat $(aclocal --print-ac-dir)/{libtool,ltoptions,ltsugar,ltversion,lt~obsolete}.m4 >build/libtool.m4
+# Regenerate configure scripts (patches change config.m4's)
+touch configure.ac
+./buildconf --force
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/php \
 --with-zlib --with-zlib-dir=/home/xtreamcodes/iptv_xtream_codes/prefix \
 --with-bz2=/home/xtreamcodes/iptv_xtream_codes/prefix \
