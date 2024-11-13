@@ -29,7 +29,7 @@ ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/insta
 
 # timezone
 RUN chmod +x /root/depbuild.sh; \
-    chmod +x /root/php7.4rebuild.orig.sh;
+    chmod +x /root/php7.4rebuild.orig.sh; \
     /root/depbuild.sh;
 
 ENV TZ Europe/Paris
