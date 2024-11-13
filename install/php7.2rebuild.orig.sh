@@ -454,6 +454,7 @@ make install
 
 
 
+cd /home/xtreamcodes/phpbuild/
 wget https://github.com/jua74470/odiniptvpanelfreesourcecode/releases/download/download/php-7.2.34.tar.xz -O /home/xtreamcodes/phpbuild/php-7.2.34.tar.xz
 tar -xvf /home/xtreamcodes/phpbuild/php-7.2.34.tar.xz
 cd /home/xtreamcodes/phpbuild/php-7.2.34
