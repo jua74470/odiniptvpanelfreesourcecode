@@ -14,5 +14,5 @@ sudo docker build -t fedora40 .
 ```
 sudo docker run -d --name fedora40 -e TZ=Europe/Paris -e ROOT_PASSWORD=root -p 22:22 -v /home/xtreamcodes/phpbuild:/home/xtreamcodes/phpbuild fedora40
 sudo docker exec -it fedora40 bash /root/depbuild.sh
-sudo docker exec -it fedora40 bash /root/php7.2rebuild.orig.sh
+sudo docker exec -it fedora40 bash /root/php7.4rebuild.orig.sh
 ```
