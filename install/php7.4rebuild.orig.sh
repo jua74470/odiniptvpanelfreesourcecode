@@ -112,8 +112,8 @@ rm -rf /home/xtreamcodes/iptv_xtream_codes/php/php/
 rm -rf /home/xtreamcodes/iptv_xtream_codes/php/sbin/
 rm -rf /home/xtreamcodes/iptv_xtream_codes/php/var/
 mkdir -p /home/xtreamcodes/phpbuild/
-find . ! -name . -prune -type d -exec rm -rf {} +
 cd /home/xtreamcodes/phpbuild/
+find . ! -name . -prune -type d -exec rm -rf {} +
 export PATH="/usr/bin:/usr/sbin:/home/xtreamcodes/iptv_xtream_codes/prefix/bin:/home/xtreamcodes/iptv_xtream_codes/prefix/sbin"
 export LD_LIBRARY_PATH="/home/xtreamcodes/iptv_xtream_codes/prefix/lib:$LD_LIBRARY_PATH"
 export LIBRARY_PATH="/home/xtreamcodes/iptv_xtream_codes/prefix/lib:$LIBRARY_PATH"
@@ -526,7 +526,17 @@ rm -rf /home/xtreamcodes/phpbuild/v1.2.2.zip
 rm -rf /home/xtreamcodes/phpbuild/mcrypt-1.0.5.tgz
 rm -rf /home/xtreamcodes/phpbuild/geoip-1.1.1.tgz
 rm -rf /home/xtreamcodes/phpbuild/igbinary-3.2.14.tgz
+rm -f /home/xtreamcodes/phpbuild/GeoIP-1.6.12.tar.gz
+rm -f /home/xtreamcodes/phpbuild/libmaxminddb-1.11.0.tar.gz
+rm -f /home/xtreamcodes/phpbuild/package.xml
+rm -f /home/xtreamcodes/phpbuild/pcre-8.45.tar.bz2
+rm -f /home/xtreamcodes/phpbuild/php-7.4.33.tar.xz
+rm -f /home/xtreamcodes/phpbuild/wget-1.25.0.tar.gz
+rm -f /home/xtreamcodes/phpbuild/zlib-1.3.1.tar.gz
+rm -f /home/xtreamcodes/phpbuild/*.tar.*
 tar -cvf phpbuild-php7.4-$OS-$VER.tar phpbuild
 echo "compress xz"
 xz phpbuild-php7.4-$OS-$VER.tar
+cd /home/xtreamcodes/phpbuild/
+find . ! -name . -prune -type d -exec rm -rf {} +
 mv /home/xtreamcodes/phpbuild-php7.4-$OS-$VER.tar.xz /home/xtreamcodes/phpbuild/
