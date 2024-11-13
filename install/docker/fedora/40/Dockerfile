@@ -23,11 +23,11 @@ RUN { \
     } > /usr/local/bin/entry_point.sh; \
     chmod +x /usr/local/bin/entry_point.sh;
 
-ADD https://raw.githubusercontent.com/Homebrew/install/master/install /root
+
+ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/ef07aca1581d88e0f647017dbf32a71523719ac1/install/depbuild.sh /root/
 
 # timezone
-RUN dnf -y update && dnf install -y tzdata; \
-    dnf clean all;
+RUN chmod +x /root/depbuild.sh;
 
 ENV TZ Europe/Paris
 
