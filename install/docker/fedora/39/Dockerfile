@@ -6,10 +6,12 @@ RUN dnf --setopt=metadata_expire=never install -y https://mirrors.rpmfusion.org/
 RUN dnf --setopt=metadata_expire=never install -y https://rpms.remirepo.net/fedora/remi-release-39.rpm;
 RUN dnf clean all;
 RUN dnf -y update
-RUN dnf --setopt=metadata_expire=never install -y openssh-server @core tzdata sudo vim make zip unzip chkconfig bash-completion wget bzip2-libs curl curl-devel libcurl-devel perl-libwww-perl libxml2 libxml2-devel bzip2-devel;
-RUN dnf --setopt=metadata_expire=never install -y gcc gcc-c++ at make ca-certificates nano psmisc daemonize at bash-completion jq sshpass net-tools e2fsprogs e2fsprogs-devel e2fsprogs-libs e2fsprogs-static libcurl-devel;
-RUN dnf --setopt=metadata_expire=never install -y libxslt-devel GeoIP-devel wget htop unzip httpd httpd-devel zip mc libpng-devel mcrypt libmcrypt-devel libX11-devel X11-devel libpng-devel zlib-devel bzip2-devel;
-RUN dnf --setopt=metadata_expire=never install -y libxml2-devel libpng-devel bzip2-devel gnupg2 gnupg bzip2-devel pam-devel;
+RUN dnf --setopt=metadata_expire=never install -y openssh-server @core tzdata sudo vim make zip unzip chkconfig bash-completion wget bzip2-libs curl curl-devel libcurl-devel perl-libwww-perl;
+RUN dnf --setopt=metadata_expire=never install -y libxml2 libxml2-devel bzip2-devel gcc gcc-c++ at make ca-certificates nano psmisc daemonize at bash-completion jq sshpass net-tools;
+RUN dnf --setopt=metadata_expire=never install -y e2fsprogs e2fsprogs-devel e2fsprogs-libs e2fsprogs-static libcurl-devel libxslt-devel GeoIP-devel wget htop unzip httpd httpd-devel;
+RUN dnf --setopt=metadata_expire=never install -y zip mc libpng-devel mcrypt libmcrypt-devel libX11-devel X11-devel libpng-devel zlib-devel bzip2-devel libxml2-devel libpng-devel;
+RUN dnf --setopt=metadata_expire=never install -y bzip2-devel gnupg2 gnupg bzip2-devel pam-devel pam nginx nginx-devel libstdc++-devel openssl-devel sqlite-devel zlib-devel;
+RUN dnf --setopt=metadata_expire=never install -y smtpdaemon libedit-devel pcre-devel pcre2-devel pcre3-devel;
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''; \
     sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd; \
     sed -i 's/^#\(PermitRootLogin\) .*/\1 yes/' /etc/ssh/sshd_config; \
@@ -28,7 +30,6 @@ RUN { \
 
 ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/installer/install/php7.4rebuild.orig.sh /root
 
-##RUN dnf -y install sudo vim make zip unzip chkconfig bash-completion wget bzip2-libs curl curl-devel libcurl-devel perl-libwww-perl libxml2 libxml2-devel bzip2-devel gcc gcc-c++ at make ca-certificates nano psmisc daemonize at bash-completion jq sshpass net-tools e2fsprogs e2fsprogs-devel e2fsprogs-libs e2fsprogs-static libcurl-devel libxslt-devel GeoIP-devel wget htop unzip httpd httpd-devel zip mc libpng-devel mcrypt libmcrypt-devel libX11-devel X11-devel libpng-devel zlib-devel bzip2-devel gcc libxml2-devel libpng-devel bzip2-devel gnupg2 gnupg bzip2-devel pam-devel;
 #RUN dnf -y install --skip-unavailable pam nginx nginx-devel libstdc++-devel openssl-devel sqlite-devel zlib-devel smtpdaemon libedit-devel pcre-devel pcre2-devel pcre3-devel;
 #RUN dnf -y install --skip-unavailable libxcrypt-devel xcrypt-devel perl-interpreter autoconf automake make gcc gcc-c++ libtool libtool-ltdl-devel systemtap-sdt-devel tzdata;
 #RUN dnf -y install --skip-unavailable procps procps-ng libacl-devel systemd-devel krb5-devel libc-client-devel cyrus-sasl-devel openldap-devel libpq-devel unixODBC-devel;
