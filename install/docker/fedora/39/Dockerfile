@@ -12,6 +12,8 @@ RUN dnf -y update
 RUN dnf --setopt=metadata_expire=never install -y @core;
 RUN dnf --setopt=metadata_expire=never install -y dnf-plugins-core;
 RUN dnf config-manager --set-enabled remi;
+RUN dnf config-manager --set-enabled rpmfusion-free;
+RUN dnf config-manager --set-enabled rpmfusion-nonfree;
 RUN dnf --setopt=metadata_expire=never install -y libicu-devel;
 RUN dnf --setopt=metadata_expire=never install -y tzdata;
 RUN dnf --setopt=metadata_expire=never install -y openssh-server;
