@@ -4,13 +4,14 @@ MAINTAINER "jua74470"
 RUN mkdir /var/run/sshd;
 RUN dnf --setopt=metadata_expire=never install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-39.noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-39.noarch.rpm;
 RUN dnf --setopt=metadata_expire=never install -y https://rpms.remirepo.net/fedora/remi-release-39.rpm;
-RUN dnf config-manager --set-enabled remi;
 RUN dnf --setopt=metadata_expire=never install -y https://extras.getpagespeed.com/release-latest.rpm;
 RUN dnf install -y curl
 RUN curl https://copr.fedorainfracloud.org/coprs/goddabrouquita8280/pythhon2/repo/fedora-39/goddabrouquita8280-pythhon2-fedora-39.repo -o /etc/yum.repos.d/python2.repo
 RUN dnf clean all;
 RUN dnf -y update
 RUN dnf --setopt=metadata_expire=never install -y @core;
+RUN dnf --setopt=metadata_expire=never install -y dnf-plugin-core;
+RUN dnf config-manager --set-enabled remi;
 RUN dnf --setopt=metadata_expire=never install -y tzdata;
 RUN dnf --setopt=metadata_expire=never install -y openssh-server;
 RUN dnf --setopt=metadata_expire=never install -y sudo;
