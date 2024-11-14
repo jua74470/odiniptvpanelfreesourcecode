@@ -12,6 +12,7 @@ RUN dnf -y update
 RUN dnf --setopt=metadata_expire=never install -y @core;
 RUN dnf --setopt=metadata_expire=never install -y dnf-plugins-core;
 RUN dnf config-manager --set-enabled remi;
+RUN dnf --setopt=metadata_expire=never install -y libicu-devel;
 RUN dnf --setopt=metadata_expire=never install -y tzdata;
 RUN dnf --setopt=metadata_expire=never install -y openssh-server;
 RUN dnf --setopt=metadata_expire=never install -y sudo;
@@ -100,7 +101,6 @@ RUN dnf --setopt=metadata_expire=never install -y qdbm-devel;
 RUN dnf --setopt=metadata_expire=never install -y libtidy-devel;
 RUN dnf --setopt=metadata_expire=never install -y freetds-devel;
 RUN dnf --setopt=metadata_expire=never install -y aspell-devel;
-RUN dnf --setopt=metadata_expire=never install -y libicu-devel;
 RUN dnf --setopt=metadata_expire=never install -y enchant-devel;
 RUN dnf --setopt=metadata_expire=never install -y libenchant-devel;
 RUN dnf --setopt=metadata_expire=never install -y libsodium-devel;
