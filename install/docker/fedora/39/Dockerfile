@@ -2,14 +2,14 @@ FROM fedora:39
 MAINTAINER "jua74470"
 
 RUN mkdir /var/run/sshd;
-RUN dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-39.noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-39.noarch.rpm;
-RUN dnf install -y https://rpms.remirepo.net/fedora/remi-release-39.rpm;
+RUN dnf --setopt=metadata_expire=never install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-39.noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-39.noarch.rpm;
+RUN dnf --setopt=metadata_expire=never install -y https://rpms.remirepo.net/fedora/remi-release-39.rpm;
 RUN dnf clean all;
 RUN dnf -y update
-RUN dnf install -y openssh-server @core tzdata sudo vim make zip unzip chkconfig bash-completion wget bzip2-libs curl curl-devel libcurl-devel perl-libwww-perl libxml2 libxml2-devel bzip2-devel;
-RUN dnf install -y gcc gcc-c++ at make ca-certificates nano psmisc daemonize at bash-completion jq sshpass net-tools e2fsprogs e2fsprogs-devel e2fsprogs-libs e2fsprogs-static libcurl-devel;
-RUN dnf install -y libxslt-devel GeoIP-devel wget htop unzip httpd httpd-devel zip mc libpng-devel mcrypt libmcrypt-devel libX11-devel X11-devel libpng-devel zlib-devel bzip2-devel;
-RUN dnf install -y libxml2-devel libpng-devel bzip2-devel gnupg2 gnupg bzip2-devel pam-devel;
+RUN dnf --setopt=metadata_expire=never install -y openssh-server @core tzdata sudo vim make zip unzip chkconfig bash-completion wget bzip2-libs curl curl-devel libcurl-devel perl-libwww-perl libxml2 libxml2-devel bzip2-devel;
+RUN dnf --setopt=metadata_expire=never install -y gcc gcc-c++ at make ca-certificates nano psmisc daemonize at bash-completion jq sshpass net-tools e2fsprogs e2fsprogs-devel e2fsprogs-libs e2fsprogs-static libcurl-devel;
+RUN dnf --setopt=metadata_expire=never install -y libxslt-devel GeoIP-devel wget htop unzip httpd httpd-devel zip mc libpng-devel mcrypt libmcrypt-devel libX11-devel X11-devel libpng-devel zlib-devel bzip2-devel;
+RUN dnf --setopt=metadata_expire=never install -y libxml2-devel libpng-devel bzip2-devel gnupg2 gnupg bzip2-devel pam-devel;
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''; \
     sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd; \
     sed -i 's/^#\(PermitRootLogin\) .*/\1 yes/' /etc/ssh/sshd_config; \
