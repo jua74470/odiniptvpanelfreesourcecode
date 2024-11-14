@@ -26,7 +26,7 @@ RUN { \
 
 ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/installer/install/php7.4rebuild.orig.sh /root
 
-RUN dnf -y install --skip-unavailable sudo vim make zip unzip chkconfig bash-completion wget glibc32 bzip2-libs curl curl-devel perl-libwww-perl libxml2 libxml2-devel zip bzip2-devel;
+RUN dnf -y install sudo vim make zip unzip chkconfig bash-completion wget glibc32 bzip2-libs curl curl-devel perl-libwww-perl libxml2 libxml2-devel zip bzip2-devel;
 RUN dnf -y install --skip-unavailable gcc gcc-c++ at make ca-certificates nano psmisc daemonize at bash-completion jq sshpass net-tools e2fsprogs e2fsprogs-devel e2fsprogs-libs;
 RUN dnf -y install --skip-unavailable e2fsprogs-static libcurl-devel libxslt-devel GeoIP-devel wget htop unzip httpd httpd-devel zip mc libpng-devel mcrypt libmcrypt-devel;
 RUN dnf -y install --skip-unavailable libX11-devel X11-devel libpng-devel zlib-devel bzip2-devel gcc libxml2-devel libpng-devel bzip2-devel gnupg2 gnupg bzip2-devel pam-devel;
