@@ -3,8 +3,8 @@ MAINTAINER "jua74470"
 
 RUN mkdir /var/run/sshd; \
     dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-39.noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-39.noarch.rpm; \
-    dnf install -y https://rpms.remirepo.net/fedora/remi-release-39.rpm;
-    dnf clean all && dnf -y update && dnf install -y openssh-server @core tzdata sudo vim make zip unzip chkconfig bash-completion wget bzip2-libs curl curl-devel libcurl-devel perl-libwww-perl libxml2 libxml2-devel bzip2-devel gcc gcc-c++ at make ca-certificates nano psmisc daemonize at bash-completion jq sshpass net-tools e2fsprogs e2fsprogs-devel e2fsprogs-libs e2fsprogs-static libcurl-devel libxslt-devel GeoIP-devel wget htop unzip httpd httpd-devel zip mc libpng-devel mcrypt libmcrypt-devel libX11-devel X11-devel libpng-devel zlib-devel bzip2-devel gcc libxml2-devel libpng-devel bzip2-devel gnupg2 gnupg bzip2-devel pam-devel;; \
+    dnf install -y https://rpms.remirepo.net/fedora/remi-release-39.rpm; \
+    dnf clean all && dnf -y update && dnf install -y openssh-server @core tzdata sudo vim make zip unzip chkconfig bash-completion wget bzip2-libs curl curl-devel libcurl-devel perl-libwww-perl libxml2 libxml2-devel bzip2-devel gcc gcc-c++ at make ca-certificates nano psmisc daemonize at bash-completion jq sshpass net-tools e2fsprogs e2fsprogs-devel e2fsprogs-libs e2fsprogs-static libcurl-devel libxslt-devel GeoIP-devel wget htop unzip httpd httpd-devel zip mc libpng-devel mcrypt libmcrypt-devel libX11-devel X11-devel libpng-devel zlib-devel bzip2-devel gcc libxml2-devel libpng-devel bzip2-devel gnupg2 gnupg bzip2-devel pam-devel; \
     ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''; \
     sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd; \
     sed -i 's/^#\(PermitRootLogin\) .*/\1 yes/' /etc/ssh/sshd_config; \
