@@ -63,7 +63,6 @@ RUN dnf --setopt=metadata_expire=never install -y smtpdaemon;
 RUN dnf --setopt=metadata_expire=never install -y libedit-devel;
 RUN dnf --setopt=metadata_expire=never install -y pcre-devel;
 RUN dnf --setopt=metadata_expire=never install -y pcre2-devel;
-RUN dnf --setopt=metadata_expire=never install -y pcre3-devel;
 RUN dnf --setopt=metadata_expire=never install -y libxcrypt-devel;
 RUN dnf --setopt=metadata_expire=never install -y perl-interpreter;
 RUN dnf --setopt=metadata_expire=never install -y autoconf;
