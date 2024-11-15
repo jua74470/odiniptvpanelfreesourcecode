@@ -1,6 +1,7 @@
 FROM centos:6
 MAINTAINER "jua74470"
 
+
 RUN mkdir /var/run/sshd;
 RUN yum install -y --nogpgcheck https://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm
 RUN yum install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm
