@@ -93,7 +93,7 @@ RUN yum --setopt=metadata_expire=never install -y krb5-devel;
 RUN yum --setopt=metadata_expire=never install -y libc-client-devel;
 RUN yum --setopt=metadata_expire=never install -y cyrus-sasl-devel;
 RUN yum --setopt=metadata_expire=never install -y openldap-devel;
-RUN yum --setopt=metadata_expire=never install -y libpq-devel;
+#RUN yum --setopt=metadata_expire=never install -y libpq-devel;
 RUN yum --setopt=metadata_expire=never install -y unixODBC-devel;
 RUN yum --setopt=metadata_expire=never install -y firebird-devel;
 RUN yum --setopt=metadata_expire=never install -y net-snmp-devel;
