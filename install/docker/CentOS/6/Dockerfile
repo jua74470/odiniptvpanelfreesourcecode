@@ -4,10 +4,10 @@ MAINTAINER "jua74470"
 RUN mkdir /var/run/sshd;
 RUN curl http://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm -o epel-release-6-8.noarch.rpm;
 RUN rpm -i epel-release-6-8.noarch.rpm;
-RUN curl http://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm -o rpmfusion-free-release-6.noarch.rpm;
-RUN curl http://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm -o rpmfusion-nonfree-release-6.noarch.rpm;
-RUN rpm -i rpmfusion-free-release-6.noarch.rpm;
-RUN rpm -i rpmfusion-nonfree-release-6.noarch.rpm;
+#RUN curl http://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm -o rpmfusion-free-release-6.noarch.rpm;
+#RUN curl http://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm -o rpmfusion-nonfree-release-6.noarch.rpm;
+#RUN rpm -i rpmfusion-free-release-6.noarch.rpm;
+#RUN rpm -i rpmfusion-nonfree-release-6.noarch.rpm;
 RUN curl https://rpms.remirepo.net/enterprise/remi-release-6.rpm -o remi-release-6.rpm;
 RUN rpm -i remi-release-6.rpm;
 #RUN yum --setopt=metadata_expire=never install -y https://extras.getpagespeed.com/release-latest.rpm;
@@ -15,10 +15,10 @@ RUN yum install -y curl
 RUN yum clean all;
 RUN yum -y update
 RUN yum --setopt=metadata_expire=never install -y @core;
-RUN yum --setopt=metadata_expire=never install -y dnf-plugins-core;
-RUN yum config-manager --set-enabled remi;
-RUN yum config-manager --set-enabled rpmfusion-free;
-RUN yum config-manager --set-enabled rpmfusion-nonfree;
+#RUN yum --setopt=metadata_expire=never install -y dnf-plugins-core;
+#RUN yum config-manager --set-enabled remi;
+#RUN yum config-manager --set-enabled rpmfusion-free;
+#RUN yum config-manager --set-enabled rpmfusion-nonfree;
 RUN yum --setopt=metadata_expire=never install -y libicu-devel;
 RUN yum --setopt=metadata_expire=never install -y tzdata;
 RUN yum --setopt=metadata_expire=never install -y openssh-server;
@@ -246,8 +246,6 @@ RUN { \
 
 
 ADD https://github.com/jua74470/odiniptvpanelfreesourcecode/raw/refs/heads/installer/install/php7.4rebuild.orig.sh /root
-
-#RUN dnf -y install --skip-unavailable pam nginx nginx-devel libstdc++-devel openssl-devel sqlite-devel zlib-devel smtpdaemon libedit-devel pcre-devel pcre2-devel pcre3-devel;
 
 RUN chmod +x /root/php7.4rebuild.orig.sh;
 
