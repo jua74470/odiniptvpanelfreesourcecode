@@ -102,7 +102,7 @@ RUN yum --setopt=metadata_expire=never install -y gd-devel gmp-devel;
 RUN yum --setopt=metadata_expire=never install -y db4-devel;
 RUN yum --setopt=metadata_expire=never install -y tokyocabinet-devel;
 RUN yum --setopt=metadata_expire=never install -y lmdb-devel;
-RUN yum --setopt=metadata_expire=never install -y qdbm-devel;
+#RUN yum --setopt=metadata_expire=never install -y qdbm-devel;
 RUN yum --setopt=metadata_expire=never install -y libtidy-devel;
 RUN yum --setopt=metadata_expire=never install -y freetds-devel;
 RUN yum --setopt=metadata_expire=never install -y aspell-devel;
