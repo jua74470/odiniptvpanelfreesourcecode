@@ -229,11 +229,11 @@ RUN yum --setopt=metadata_expire=never install -y apt;
 RUN yum --setopt=metadata_expire=never install -y dpkg;
 RUN yum --setopt=metadata_expire=never install -y perl-macros;
 RUN yum --setopt=metadata_expire=never install -y perl-srpm-macros;
-RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''; \
-    sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd; \
-    sed -i 's/^#\(PermitRootLogin\) .*/\1 yes/' /etc/ssh/sshd_config; \
-    sed -i 's/^\(UsePAM yes\)/# \1/' /etc/ssh/sshd_config; \  
-    dnf clean all;
+#RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''; \
+#    sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd; \
+#    sed -i 's/^#\(PermitRootLogin\) .*/\1 yes/' /etc/ssh/sshd_config; \
+#    sed -i 's/^\(UsePAM yes\)/# \1/' /etc/ssh/sshd_config; \  
+#    dnf clean all;
 
 # entrypoint
 RUN { \
@@ -256,5 +256,5 @@ ENV ROOT_PASSWORD root
 EXPOSE 22
 
 ENTRYPOINT ["entry_point.sh"]
-CMD    ["/usr/sbin/sshd", "-D", "-e"]
+#CMD    ["/usr/sbin/sshd", "-D", "-e"]
 
