@@ -2,6 +2,10 @@ FROM centos:centos6
 MAINTAINER "jua74470"
 
 RUN mkdir /var/run/sshd;
+RUN curl https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/installer/install/docker/CentOS/6/CentOS-Base.repo -o /etc/yum.repos.d/CentOS-Base.repo;
+RUN rm -f /etc/yum.repos.d/CentOS-Debuginfo.repo /etc/yum.repos.d/CentOS-Media.repo /etc/yum.repos.d/CentOS-Vault.repo /etc/yum.repos.d/CentOS-fasttrack.repo;
+RUN yum -y update;
+RUN yum -y install @core
 RUN curl http://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm -o epel-release-6-8.noarch.rpm;
 RUN rpm -i epel-release-6-8.noarch.rpm;
 #RUN curl http://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm -o rpmfusion-free-release-6.noarch.rpm;
