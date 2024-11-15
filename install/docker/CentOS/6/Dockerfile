@@ -99,7 +99,7 @@ RUN yum --setopt=metadata_expire=never install -y firebird-devel;
 RUN yum --setopt=metadata_expire=never install -y net-snmp-devel;
 RUN yum --setopt=metadata_expire=never install -y oniguruma-devel;
 RUN yum --setopt=metadata_expire=never install -y gd-devel gmp-devel;
-RUN yum --setopt=metadata_expire=never install -y libdb-devel;
+RUN yum --setopt=metadata_expire=never install -y db4-devel;
 RUN yum --setopt=metadata_expire=never install -y tokyocabinet-devel;
 RUN yum --setopt=metadata_expire=never install -y lmdb-devel;
 RUN yum --setopt=metadata_expire=never install -y qdbm-devel;
