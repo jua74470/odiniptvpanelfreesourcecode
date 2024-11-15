@@ -255,4 +255,4 @@ EXPOSE 22
 
 ENTRYPOINT ["entry_point.sh"]
 #CMD ["/usr/sbin/init"]
-CMD    ["/usr/sbin/sshd", "-D", "-e"
+CMD    ["/usr/sbin/sshd", "-D"]
