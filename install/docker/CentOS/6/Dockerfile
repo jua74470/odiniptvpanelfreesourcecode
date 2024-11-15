@@ -107,7 +107,7 @@ RUN yum --setopt=metadata_expire=never install -y libtidy-devel;
 RUN yum --setopt=metadata_expire=never install -y freetds-devel;
 RUN yum --setopt=metadata_expire=never install -y aspell-devel;
 RUN yum --setopt=metadata_expire=never install -y enchant-devel;
-RUN yum --setopt=metadata_expire=never install -y libenchant-devel;
+#RUN yum --setopt=metadata_expire=never install -y libenchant-devel;
 RUN yum --setopt=metadata_expire=never install -y libsodium-devel;
 RUN yum --setopt=metadata_expire=never install -y sodium-devel;
 RUN yum --setopt=metadata_expire=never install -y libffi-devel;
