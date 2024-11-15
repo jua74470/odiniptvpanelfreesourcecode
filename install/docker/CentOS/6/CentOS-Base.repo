@@ -17,7 +17,14 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 enabled=1
 
-#released updates
+[base-source]
+name=CentOS-$releasever - Base-Source
+baseurl=http://archive.kernel.org/centos-vault/centos/$releasever/os/Source/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+enabled=1
+
+
 [updates]
 name=CentOS-$releasever - Updates
 baseurl=http://archive.kernel.org/centos-vault/centos/$releasever/updates/$basearch/
@@ -25,7 +32,13 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 enabled=1
 
-#additional packages that may be useful
+[updates-source]
+name=CentOS-$releasever - Updates-Source
+baseurl=http://archive.kernel.org/centos-vault/centos/$releasever/updates/Source/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+enabled=1
+
 [extras]
 name=CentOS-$releasever - Extras
 baseurl=http://archive.kernel.org/centos-vault/centos/$releasever/extras/$basearch/
@@ -33,7 +46,13 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 enabled=1
 
-#additional packages that extend functionality of existing packages
+[extras-source]
+name=CentOS-$releasever - Extras-Source
+baseurl=http://archive.kernel.org/centos-vault/centos/$releasever/extras/Source/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+enabled=1
+
 [centosplus]
 name=CentOS-$releasever - Plus
 baseurl=http://archive.kernel.org/centos-vault/centos/$releasever/centosplus/$basearch/
@@ -41,10 +60,38 @@ gpgcheck=1
 enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
-#contrib - packages by Centos Users
+[centosplus-source]
+name=CentOS-$releasever - Plus-Source
+baseurl=http://archive.kernel.org/centos-vault/centos/$releasever/centosplus/Source/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
 [contrib]
 name=CentOS-$releasever - Contrib
 baseurl=http://archive.kernel.org/centos-vault/centos/$releasever/contrib/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
+[contrib-source]
+name=CentOS-$releasever - Contrib-Source
+baseurl=http://archive.kernel.org/centos-vault/centos/$releasever/contrib/Source/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
+[fasttrack]
+name=CentOS-6 - fasttrack
+baseurl=http://archive.kernel.org/centos-vault/centos/$releasever/fasttrack/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
+
+[fasttrack-source]
+name=CentOS-6 - fasttrack-Source
+baseurl=http://archive.kernel.org/centos-vault/centos/$releasever/fasttrack/Source/
 gpgcheck=1
 enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
