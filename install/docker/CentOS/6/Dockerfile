@@ -2,11 +2,14 @@ FROM centos:6
 MAINTAINER "jua74470"
 
 RUN mkdir /var/run/sshd;
-RUN curl http://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm -o epel-release-6-8.noarch.rpm
-RUN rpm -i epel-release-6-8.noarch.rpm
-RUN yum install -y http://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm http://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm
-RUN yum --setopt=metadata_expire=never install -y https://rpms.remirepo.net/enterprise/remi-release-6.rpm;
-RUN yum --setopt=metadata_expire=never install -y https://extras.getpagespeed.com/release-latest.rpm;
+RUN curl http://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm -o epel-release-6-8.noarch.rpm;
+RUN rpm -i epel-release-6-8.noarch.rpm;
+RUN curl http://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm -o rpmfusion-free-release-6.noarch.rpm;
+RUN curl http://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm -o rpmfusion-nonfree-release-6.noarch.rpm;
+RUN rpm -i rpmfusion-free-release-6.noarch.rpm rpmfusion-nonfree-release-6.noarch.rpm;
+RUN curl https://rpms.remirepo.net/enterprise/remi-release-6.rpm -o remi-release-6.rpm;
+RUN rpm -i remi-release-6.rpm;
+#RUN yum --setopt=metadata_expire=never install -y https://extras.getpagespeed.com/release-latest.rpm;
 RUN yum install -y curl
 RUN yum clean all;
 RUN yum -y update
