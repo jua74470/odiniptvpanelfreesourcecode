@@ -2,7 +2,7 @@ FROM centos:6
 MAINTAINER "jua74470"
 
 RUN mkdir /var/run/sshd;
-RUN wget http://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm -O epel-release-6-8.noarch.rpm
+RUN curl http://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm -o epel-release-6-8.noarch.rpm
 RUN rpm -i epel-release-6-8.noarch.rpm
 RUN yum install -y http://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm http://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm
 RUN yum --setopt=metadata_expire=never install -y https://rpms.remirepo.net/enterprise/remi-release-6.rpm;
