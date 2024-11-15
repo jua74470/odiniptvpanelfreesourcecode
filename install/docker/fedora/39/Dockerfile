@@ -105,7 +105,6 @@ RUN dnf --setopt=metadata_expire=never install -y aspell-devel;
 RUN dnf --setopt=metadata_expire=never install -y enchant-devel;
 RUN dnf --setopt=metadata_expire=never install -y libsodium-devel;
 RUN dnf --setopt=metadata_expire=never install -y libffi-devel;
-RUN dnf --setopt=metadata_expire=never install -y xslt-devel;
 RUN dnf --setopt=metadata_expire=never install -y yasm;
 RUN dnf --setopt=metadata_expire=never install -y nasm;
 RUN dnf --setopt=metadata_expire=never install -y gnutls-devel;
