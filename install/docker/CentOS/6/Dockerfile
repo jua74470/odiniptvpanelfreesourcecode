@@ -11,7 +11,7 @@ RUN rpm -i epel-release-6-8.noarch.rpm;
 RUN curl https://rpms.remirepo.net/enterprise/remi-release-6.rpm -o remi-release-6.rpm;
 RUN rpm -i remi-release-6.rpm;
 #RUN yum --setopt=metadata_expire=never install -y https://extras.getpagespeed.com/release-latest.rpm;
-RUN yum install -y curl
+RUN yum install -y curl;
 RUN yum clean all;
 RUN yum -y update
 RUN yum --setopt=metadata_expire=never install -y @core;
