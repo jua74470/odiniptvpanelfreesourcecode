@@ -68,7 +68,6 @@ RUN yum --setopt=metadata_expire=never install -y mc;
 RUN yum --setopt=metadata_expire=never install -y libpng-devel;
 RUN yum --setopt=metadata_expire=never install -y mcrypt;
 RUN yum --setopt=metadata_expire=never install -y libmcrypt-devel;
-RUN yum --setopt=metadata_expire=never install -y mcrypt-devel;
 RUN yum --setopt=metadata_expire=never install -y libmaxminddb-devel;
 RUN yum --setopt=metadata_expire=never install -y libX11-devel;
 RUN yum --setopt=metadata_expire=never install -y zlib-devel;
