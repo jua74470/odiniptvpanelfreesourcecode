@@ -85,7 +85,7 @@ RUN yum --setopt=metadata_expire=never install -y smtpdaemon;
 RUN yum --setopt=metadata_expire=never install -y libedit-devel;
 RUN yum --setopt=metadata_expire=never install -y pcre-devel;
 RUN yum --setopt=metadata_expire=never install -y pcre2-devel;
-RUN yum --setopt=metadata_expire=never install -y libxcrypt-devel;
+#RUN yum --setopt=metadata_expire=never install -y libxcrypt-devel;
 RUN yum --setopt=metadata_expire=never install -y perl-interpreter;
 RUN yum --setopt=metadata_expire=never install -y libacl-devel;
 RUN yum --setopt=metadata_expire=never install -y systemd-devel;
