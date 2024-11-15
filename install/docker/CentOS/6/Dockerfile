@@ -6,15 +6,11 @@ RUN curl https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/
 RUN rm -f /etc/yum.repos.d/CentOS-Debuginfo.repo /etc/yum.repos.d/CentOS-Media.repo /etc/yum.repos.d/CentOS-Vault.repo /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN yum -y update;
 RUN yum -y install @core
-RUN curl http://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm -o epel-release-6-8.noarch.rpm;
-RUN rpm -i epel-release-6-8.noarch.rpm;
-#RUN curl http://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm -o rpmfusion-free-release-6.noarch.rpm;
-#RUN curl http://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm -o rpmfusion-nonfree-release-6.noarch.rpm;
-#RUN rpm -i rpmfusion-free-release-6.noarch.rpm;
-#RUN rpm -i rpmfusion-nonfree-release-6.noarch.rpm;
-RUN curl https://rpms.remirepo.net/enterprise/remi-release-6.rpm -o remi-release-6.rpm;
-RUN rpm -i remi-release-6.rpm;
-#RUN yum --setopt=metadata_expire=never install -y https://extras.getpagespeed.com/release-latest.rpm;
+RUN yum -y install epel-release;
+RUN yum -y update;
+RUN yum -y install http://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm http://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm;
+RUN yum -y install https://rpms.remirepo.net/enterprise/remi-release-6.rpm;
+RUN yum install -y https://extras.getpagespeed.com/release-latest.rpm;
 RUN yum install -y curl;
 RUN yum clean all;
 RUN yum -y update
