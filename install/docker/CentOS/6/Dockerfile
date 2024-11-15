@@ -88,7 +88,7 @@ RUN yum --setopt=metadata_expire=never install -y pcre2-devel;
 #RUN yum --setopt=metadata_expire=never install -y libxcrypt-devel;
 RUN yum --setopt=metadata_expire=never install -y perl-interpreter;
 RUN yum --setopt=metadata_expire=never install -y libacl-devel;
-RUN yum --setopt=metadata_expire=never install -y systemd-devel;
+#RUN yum --setopt=metadata_expire=never install -y systemd-devel;
 RUN yum --setopt=metadata_expire=never install -y krb5-devel;
 RUN yum --setopt=metadata_expire=never install -y libc-client-devel;
 RUN yum --setopt=metadata_expire=never install -y cyrus-sasl-devel;
