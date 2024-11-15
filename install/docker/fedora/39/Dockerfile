@@ -64,7 +64,6 @@ RUN dnf --setopt=metadata_expire=never install -y mc;
 RUN dnf --setopt=metadata_expire=never install -y libpng-devel;
 RUN dnf --setopt=metadata_expire=never install -y mcrypt;
 RUN dnf --setopt=metadata_expire=never install -y libmcrypt-devel;
-RUN dnf --setopt=metadata_expire=never install -y mcrypt-devel;
 RUN dnf --setopt=metadata_expire=never install -y libmaxminddb-devel;
 RUN dnf --setopt=metadata_expire=never install -y libX11-devel;
 RUN dnf --setopt=metadata_expire=never install -y zlib-devel;
