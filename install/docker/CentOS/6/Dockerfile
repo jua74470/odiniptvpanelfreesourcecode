@@ -46,7 +46,6 @@ RUN yum --setopt=metadata_expire=never install -y libtool-ltdl-devel;
 #RUN yum --setopt=metadata_expire=never install -y git-core;
 RUN yum --setopt=metadata_expire=never install -y systemtap-sdt-devel;
 RUN yum --setopt=metadata_expire=never install -y procps;
-RUN yum --setopt=metadata_expire=never install -y procps-ng;
 RUN yum --setopt=metadata_expire=never install -y at;
 RUN yum --setopt=metadata_expire=never install -y ca-certificates;
 RUN yum --setopt=metadata_expire=never install -y nano;
