@@ -2,8 +2,8 @@ FROM centos:6
 MAINTAINER "jua74470"
 
 RUN mkdir /var/run/sshd;
-RUN yum install -y --nogpgcheck https://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm
-RUN yum install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm
+RUN yum install -y http://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm
+RUN yum install -y http://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm http://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm
 RUN yum --setopt=metadata_expire=never install -y https://rpms.remirepo.net/enterprise/remi-release-6.rpm;
 RUN yum --setopt=metadata_expire=never install -y https://extras.getpagespeed.com/release-latest.rpm;
 RUN yum install -y curl
