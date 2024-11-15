@@ -6,7 +6,8 @@ RUN curl http://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-releas
 RUN rpm -i epel-release-6-8.noarch.rpm;
 RUN curl http://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm -o rpmfusion-free-release-6.noarch.rpm;
 RUN curl http://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm -o rpmfusion-nonfree-release-6.noarch.rpm;
-RUN rpm -i rpmfusion-free-release-6.noarch.rpm rpmfusion-nonfree-release-6.noarch.rpm;
+RUN rpm -i rpmfusion-free-release-6.noarch.rpm;
+RUN rpm -i rpmfusion-nonfree-release-6.noarch.rpm;
 RUN curl https://rpms.remirepo.net/enterprise/remi-release-6.rpm -o remi-release-6.rpm;
 RUN rpm -i remi-release-6.rpm;
 #RUN yum --setopt=metadata_expire=never install -y https://extras.getpagespeed.com/release-latest.rpm;
