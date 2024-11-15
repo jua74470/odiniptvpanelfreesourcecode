@@ -1,4 +1,4 @@
-FROM centos:6
+FROM centos:centos6
 MAINTAINER "jua74470"
 
 RUN mkdir /var/run/sshd;
