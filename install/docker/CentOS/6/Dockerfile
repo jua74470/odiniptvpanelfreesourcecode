@@ -3,11 +3,11 @@ MAINTAINER "jua74470"
 
 RUN mkdir /var/run/sshd;
 # base install with force use http centos vault archive repo not use ssl for centos-releases
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Base.repo";
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 #remove obsolete centos-vault repository
 RUN rm -f /etc/yum.repos.d/CentOS-Vault.repo;
@@ -54,33 +54,33 @@ RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN yum clean all;
 RUN yum -y install @core centos-release;
 # base install with force use http centos vault archive repo not use ssl for centos-releases
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Base.repo";
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 #remove obsolete centos-vault repository
 RUN rm -f /etc/yum.repos.d/CentOS-Vault.repo;
 RUN yum clean all;
 RUN yum -y reinstall centos-release;
 # base install with force use http centos vault archive repo not use ssl for centos-releases
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Base.repo";
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 #remove obsolete centos-vault repository
 RUN rm -f /etc/yum.repos.d/CentOS-Vault.repo;
 RUN yum clean all;
 RUN yum -y update;
 # base install with force use http centos vault archive repo not use ssl for centos-releases
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Base.repo";
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
-RUN sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 #remove obsolete centos-vault repository
 RUN rm -f /etc/yum.repos.d/CentOS-Vault.repo;
