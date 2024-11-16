@@ -2,6 +2,100 @@ FROM centos:centos6
 MAINTAINER "jua74470"
 
 RUN mkdir /var/run/sshd;
+
+
+rm -f /etc/yum.repos.d/CentOS-Vault.repo
+rm -f /etc/yum.repos.d/CentOS-Xen-48.repo
+echo "[base]" > /etc/yum.repos.d/CentOS-Base.repo
+echo "name=CentOS-6 - Base" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/os/x86_64/" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "[base-source]" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "name=CentOS-6 - Base-Source" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/os/Source/" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "[updates]" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "name=CentOS-6 - Updates" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/updates/x86_64/" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "[updates-source]" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "name=CentOS-6 - Updates-Source" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/updates/Source/" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "[extras]" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "name=CentOS-6 - Extras" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/extras/x86_64/" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "[extras-source]" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "name=CentOS-6 - Extras-Source" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/extras/Source/" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "[centosplus]" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "name=CentOS-6 - CentOSPlus" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/centosplus/x86_64/" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "[centosplus-source]" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "name=CentOS-6 - Plus-Source" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/centosplus/Source/" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "[contrib]" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "name=CentOS-6 - Contrib" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/contrib/x86_64/" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo
+
+echo "[fasttrack]" > /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "name=CentOS-6 - fasttrack" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/fasttrack/x86_64/" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "enabled=1" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "[fasttrack-source]" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "name=CentOS-6 - fasttrack-Source" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/fasttrack/Source/" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "enabled=1" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-fasttrack.repo
+
+yum -y install epel-release centos-release-xen centos-release-xen-common centos-release-azure centos-release-gluster312 centos-release-gluster-legacy centos-release-xen-46 centos-release-xen-48 centos-release-xen-44 centos-release-scl-rh centos-release-storage-common centos-release-scl centos-release-virt-common centos-release-gluster41 ros-release centos-release-cr centos-release-gluster5 centos-release-gluster6 centos-release-gluster7 centos-release-xen-410 
+
+
+
+
+
+
+
+
+
+
+
+
 RUN curl https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/installer/install/docker/CentOS/6/CentOS-Base.repo -o /etc/yum.repos.d/CentOS-Base.repo;
 RUN rm -f /etc/yum.repos.d/CentOS-Debuginfo.repo /etc/yum.repos.d/CentOS-Media.repo /etc/yum.repos.d/CentOS-Vault.repo /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN yum -y update;
