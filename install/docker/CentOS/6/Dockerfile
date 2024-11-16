@@ -2,90 +2,58 @@ FROM centos:centos6
 MAINTAINER "jua74470"
 
 RUN mkdir /var/run/sshd;
-# base install with force use http archive repo not use ssl for centos-releases
-RUN rm -f /etc/yum.repos.d/*;
-RUN echo "[base]" > /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "name=CentOS-6 - Base" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/os/x86_64/" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "[base-source]" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "name=CentOS-6 - Base-Source" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/os/Source/" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "[updates]" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "name=CentOS-6 - Updates" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/updates/x86_64/" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "[updates-source]" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "name=CentOS-6 - Updates-Source" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/updates/Source/" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "[extras]" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "name=CentOS-6 - Extras" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/extras/x86_64/" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "[extras-source]" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "name=CentOS-6 - Extras-Source" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/extras/Source/" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "[centosplus]" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "name=CentOS-6 - CentOSPlus" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/centosplus/x86_64/" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "[centosplus-source]" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "name=CentOS-6 - Plus-Source" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/centosplus/Source/" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "[contrib]" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "name=CentOS-6 - Contrib" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/contrib/x86_64/" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "enabled=1" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Base.repo;
-RUN echo "[fasttrack]" > /etc/yum.repos.d/CentOS-fasttrack.repo;
-RUN echo "name=CentOS-6 - fasttrack" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
-RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/fasttrack/x86_64/" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
-RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
-RUN echo "enabled=1" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
-RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
-RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
-RUN echo "" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
-RUN echo "[fasttrack-source]" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
-RUN echo "name=CentOS-6 - fasttrack-Source" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
-RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/fasttrack/Source/" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
+# base install with force use http centos vault archive repo not use ssl for centos-releases
+sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo"
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Base.repo"
+sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo"
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo"
+sed -i 's|mirrorlist=http://mirrorlist.centos.org|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo"
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo"
+#remove obsolete centos-vault repository
+rm -f /etc/yum.repos.d/CentOS-Vault.repo
+# add new vault centos 6 source code repository
+RUN echo "[base-source]" > /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "name=CentOS-6 - Base-Source" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/os/Source/" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "[updates-source]" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "name=CentOS-6 - Updates-Source" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/updates/Source/" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "[extras-source]" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "name=CentOS-6 - Extras-Source" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/extras/Source/" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "[centosplus-source]" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "name=CentOS-6 - Plus-Source" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/centosplus/Source/" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "" >> /etc/yum.repos.d/CentOS-Source.repo;
+
+
+
+
+
+
+
+RUN echo "[fasttrack-source]" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "name=CentOS-6 - fasttrack-Source" >> /etc/yum.repos.d/CentOS-Source.repo;
+RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/fasttrack/Source/" >> /etc/yum.repos.d/Source.repo;
 RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
@@ -179,7 +147,8 @@ RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
-yum -y reinstall centos-release
+RUN yum -y reinstall centos-release;
+rm -rf /etc/yum.repos.d/
 echo "[base]" > /etc/yum.repos.d/CentOS-Base.repo
 echo "name=CentOS-6 - Base" >> /etc/yum.repos.d/CentOS-Base.repo
 echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/os/x86_64/" >> /etc/yum.repos.d/CentOS-Base.repo
