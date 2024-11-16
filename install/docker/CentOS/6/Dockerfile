@@ -5,6 +5,7 @@ RUN mkdir /var/run/sshd;
 # base install with force use http centos vault archive repo not use ssl for centos-releases
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Base.repo";
+RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
@@ -56,6 +57,7 @@ RUN yum -y install @core centos-release;
 # base install with force use http centos vault archive repo not use ssl for centos-releases
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Base.repo";
+RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
@@ -67,6 +69,7 @@ RUN yum -y reinstall centos-release;
 # base install with force use http centos vault archive repo not use ssl for centos-releases
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Base.repo";
+RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
@@ -78,6 +81,7 @@ RUN yum -y update;
 # base install with force use http centos vault archive repo not use ssl for centos-releases
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Base.repo";
+RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
