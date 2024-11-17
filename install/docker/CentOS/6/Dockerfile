@@ -8,6 +8,7 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se
 RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
+RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 #remove obsolete centos-vault repository
@@ -60,6 +61,7 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se
 RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
+RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 #remove obsolete centos-vault repository
@@ -72,6 +74,7 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se
 RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
+RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 #remove obsolete centos-vault repository
@@ -84,57 +87,86 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se
 RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
+RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 #remove obsolete centos-vault repository
 RUN rm -f /etc/yum.repos.d/CentOS-Vault.repo;
 RUN yum -y install centos-release-cr;
-centos-release-xen
-centos-release-xen-common
-centos-release-azure
-centos-release-gluster312
-centos-release-gluster-legacy
-centos-release-xen-46
-centos-release-xen-48
-centos-release-xen-44
-centos-release-scl-rh
-centos-release-storage-common
-centos-release-scl
-centos-release-virt-common
-centos-release-gluster41
-centos-release-gluster5
-centos-release-gluster6
-centos-release-gluster7
-centos-release-xen-410
-http://rpms.remirepo.net/enterprise/remi-release-6.rpm
-http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/free-archive/el/updates/6/x86_64/rpmfusion-free-release-6-4.noarch.rpm
-http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/free-archive/el/updates/6/x86_64/rpmfusion-free-release-tainted-6-4.noarch.rpm
-http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/nonfree-archive/el/updates/6/x86_64/rpmfusion-nonfree-release-6-4.noarch.rpm
-http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/nonfree-archive/el/updates/6/x86_64/rpmfusion-nonfree-release-tainted-6-4.noarch.rpm
-ros-release
-
-
-
-
-
-
-RUN curl https://raw.githubusercontent.com/jua74470/odiniptvpanelfreesourcecode/installer/install/docker/CentOS/6/CentOS-Base.repo -o /etc/yum.repos.d/CentOS-Base.repo;
-RUN rm -f /etc/yum.repos.d/CentOS-Debuginfo.repo /etc/yum.repos.d/CentOS-Media.repo /etc/yum.repos.d/CentOS-Vault.repo /etc/yum.repos.d/CentOS-fasttrack.repo;
-RUN yum -y update;
-RUN yum -y install @core
+# force use http centos vault archive repo not use ssl for  centos-release-cr
+RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-CR.repo";
+RUN sed -i 's|baseurl=http://mirror.centos.org|metadata_expire=24h\nbaseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-CR.repo";
+RUN yum -y install centos-release-azure centos-release-virt-common centos-release-storage-common;
+RUN sed -i 's|baseurl=http://mirror.centos.org|metadata_expire=24h\nbaseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Azure.repo";
+RUN yum -y install centos-release-scl centos-release-scl-rh;
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-SCLo-scl.repo";
+RUN sed -i 's|# baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-SCLo-scl.repo";
+RUN sed -i 's|baseurl=http://vault.centos.org|metadata_expire=24h\nbaseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-SCLo-scl.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-SCLo-scl-rh.repo";
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-SCLo-scl-rh.repo";
+RUN sed -i 's|baseurl=http://vault.centos.org|metadata_expire=24h\nbaseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-SCLo-scl-rh.repo";
+RUN yum -y install centos-release-xen centos-release-xen-common centos-release-gluster312 centos-release-gluster-legacy centos-release-xen-46 centos-release-xen-48 centos-release-xen-44 centos-release-gluster41 centos-release-gluster5 centos-release-gluster6 centos-release-gluster7 centos-release-xen-410;
+RUN sed -i 's|baseurl=http://mirror.centos.org|metadata_expire=24h\nbaseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Gluster-4.1.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/CentOS-Gluster-4.1.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/CentOS-Gluster-5.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Gluster-5.repo";
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Gluster-5.repo";
+RUN sed -i 's|$contentdir|centos|g' "/etc/yum.repos.d/CentOS-Gluster-5.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/CentOS-Gluster-6.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Gluster-6.repo";
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Gluster-6.repo";
+RUN sed -i 's|$contentdir|centos|g' "/etc/yum.repos.d/CentOS-Gluster-6.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/CentOS-Gluster-7.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Gluster-7.repo";
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Gluster-7.repo";
+RUN sed -i 's|baseurl=http://mirror.centos.org|metadata_expire=24h\nbaseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Xen-410.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/CentOS-Xen-410.repo";
+RUN sed -i 's|baseurl=http://mirror.centos.org|metadata_expire=24h\nbaseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Xen-44.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/CentOS-Xen-44.repo";
+RUN sed -i 's|baseurl=http://mirror.centos.org|metadata_expire=24h\nbaseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Xen-46.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/CentOS-Xen-46.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/CentOS-Xen-dependencies.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Xen-dependencies.repo";
+RUN sed -i 's|#baseurl=http://download.fedoraproject.org/pub/|baseurl=http://mirrors.hostiserver.com/fedora/archive/|g' "/etc/yum.repos.d/CentOS-Xen-dependencies.repo";
+RUN sed -i 's|baseurl=http://mirror.centos.org|metadata_expire=24h\nbaseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Xen.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/CentOS-Xen.repo";
+#remove duplicate CentOS-xen and CentOS-xen-48 identic file contain
+RUN rm -f "/etc/yum.repos.d/CentOS-Xen-48.repo";
+RUN yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm yum-utils;
+RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "/etc/yum.repos.d/remi.repo";
+RUN sed -i 's|baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "/etc/yum.repos.d/remi.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/remi.repo";
+RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "remi-glpi91.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "remi-glpi91.repo";
+RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "remi-glpi92.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "remi-glpi92.repo";
+RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "remi-glpi93.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "remi-glpi93.repo";
+RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "remi-glpi94.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "remi-glpi94.repo";
+RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "remi-php54.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "remi-php54.repo";
+RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "remi-php70.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "remi-php70.repo";
+RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "remi-php71.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "remi-php71.repo";
+RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "remi-php72.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "remi-php72.repo";
+RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "remi-php73.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "remi-php73.repo";
+RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "remi-safe.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "remi-safe.repo";
+RUN yum-config-manager --enable remi;
+RUN yum-config-manager --enable remi-php56;
+RUN yum -y install http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/free-archive/el/updates/6/x86_64/rpmfusion-free-release-6-4.noarch.rpm;
+RUN yum -y install http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/free-archive/el/updates/6/x86_64/rpmfusion-free-release-tainted-6-4.noarch.rpm;
+RUN yum -y install http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/nonfree-archive/el/updates/6/x86_64/rpmfusion-nonfree-release-6-4.noarch.rpm;
+RUN yum -y install http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/nonfree-archive/el/updates/6/x86_64/rpmfusion-nonfree-release-tainted-6-4.noarch.rpm;
 RUN yum -y install epel-release;
 RUN yum -y update;
-RUN yum -y install http://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm http://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm;
-RUN yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm;
-#RUN yum install -y https://extras.getpagespeed.com/release-latest.rpm;
 RUN yum install -y curl;
 RUN yum clean all;
 RUN yum -y update
-RUN yum --setopt=metadata_expire=never install -y @core;
-#RUN yum --setopt=metadata_expire=never install -y dnf-plugins-core;
-#RUN yum config-manager --set-enabled remi;
-#RUN yum config-manager --set-enabled rpmfusion-free;
-#RUN yum config-manager --set-enabled rpmfusion-nonfree;
 RUN yum --setopt=metadata_expire=never install -y libicu-devel;
 RUN yum --setopt=metadata_expire=never install -y tzdata;
 RUN yum --setopt=metadata_expire=never install -y openssh-server;
