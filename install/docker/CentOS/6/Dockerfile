@@ -132,6 +132,11 @@ RUN sed -i 's|baseurl=http://mirror.centos.org|metadata_expire=24h\nbaseurl=http
 RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/CentOS-Xen.repo";
 #remove duplicate CentOS-xen and CentOS-xen-48 identic file contain
 RUN rm -f "/etc/yum.repos.d/CentOS-Xen-48.repo";
+RUN yum -y install epel-release;
+RUN sed -i 's|#baseurl=http://download.fedoraproject.org/pub/|baseurl=http://mirrors.hostiserver.com/fedora/archive/|g' "/etc/yum.repos.d/epel.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/epel.repo";
+RUN sed -i 's|#baseurl=http://download.fedoraproject.org/pub/|baseurl=http://mirrors.hostiserver.com/fedora/archive/|g' "/etc/yum.repos.d/epel-testing.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/epel-testing.repo";
 RUN yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm yum-utils;
 RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "/etc/yum.repos.d/remi.repo";
 RUN sed -i 's|baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "/etc/yum.repos.d/remi.repo";
@@ -162,7 +167,25 @@ RUN yum -y install http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.
 RUN yum -y install http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/free-archive/el/updates/6/x86_64/rpmfusion-free-release-tainted-6-4.noarch.rpm;
 RUN yum -y install http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/nonfree-archive/el/updates/6/x86_64/rpmfusion-nonfree-release-6-4.noarch.rpm;
 RUN yum -y install http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/nonfree-archive/el/updates/6/x86_64/rpmfusion-nonfree-release-tainted-6-4.noarch.rpm;
-RUN yum -y install epel-release;
+RUN sed -i 's|#baseurl=http://download1.rpmfusion.org/free/|baseurl=http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/free-archive/|g' "rpmfusion-free-tainted.repo";
+RUN sed -i 's|metalink=.*|metadata_expire=24h|g' "/etc/yum.repos.d/rpmfusion-free-tainted.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/rpmfusion-free-tainted.repo";
+RUN sed -i 's|#baseurl=http://download1.rpmfusion.org/free/|baseurl=http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/free-archive/|g' "/etc/yum.repos.d/rpmfusion-free-updates-testing.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/rpmfusion-free-updates-testing.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/rpmfusion-free-updates-testing.repo";
+RUN sed -i 's|#baseurl=http://download1.rpmfusion.org/free/|baseurl=http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/free-archive/|g' "/etc/yum.repos.d/rpmfusion-free-updates.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/rpmfusion-free-updates.repo";
+RUN sed -i 's|#baseurl=http://download1.rpmfusion.org/nonfree/|baseurl=http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/nonfree-archive/|g' "rpmfusion-nonfree-tainted.repo";
+RUN sed -i 's|metalink=.*|metadata_expire=24h|g' "/etc/yum.repos.d/rpmfusion-nonfree-tainted.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/rpmfusion-nonfree-tainted.repo";
+RUN sed -i 's|#baseurl=http://download1.rpmfusion.org/nonfree/|baseurl=http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/nonfree-archive/|g' "/etc/yum.repos.d/rpmfusion-nonfree-updates-testing.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/rpmfusion-nonfree-updates-testing.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/rpmfusion-nonfree-updates-testing.repo";
+RUN sed -i 's|#baseurl=http://download1.rpmfusion.org/nonfree/|baseurl=http://mirror1.hs-esslingen.de/pub/Mirrors/archive.rpmfusion.org/nonfree-archive/|g' "/etc/yum.repos.d/rpmfusion-nonfree-updates.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/rpmfusion-nonfree-updates.repo";
+
+
+
 RUN yum -y update;
 RUN yum install -y curl;
 RUN yum clean all;
