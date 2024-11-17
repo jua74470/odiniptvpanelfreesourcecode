@@ -98,6 +98,7 @@ RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-CR.repo";
 RUN sed -i 's|baseurl=http://mirror.centos.org|metadata_expire=24h\nbaseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-CR.repo";
 RUN yum -y install centos-release-azure centos-release-virt-common centos-release-storage-common;
 RUN sed -i 's|baseurl=http://mirror.centos.org|metadata_expire=24h\nbaseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Azure.repo";
+RUN sed -i 's|enabled=1|enabled=0|g' "/etc/yum.repos.d/CentOS-Azure.repo";
 RUN yum -y install centos-release-scl centos-release-scl-rh;
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-SCLo-scl.repo";
 RUN sed -i 's|# baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-SCLo-scl.repo";
