@@ -2,13 +2,15 @@ FROM centos:centos6
 MAINTAINER "jua74470"
 
 RUN mkdir /var/run/sshd;
-RUN find /etc/yum.repos.d/ -name *.repo -exec sed -i 's|mirrorlist=http://mirrorlist.centos.org|#mirrorlist=http://mirrorlist.centos.org|' {} \;;
-RUN find /etc/yum.repos.d/ -name *.repo -exec sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|' {} \;
-RUN yum clean all;
-RUN yum -y install @core centos-release;
-
-
-
+# base install with force use http centos vault archive repo not use ssl for centos-releases
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Base.repo";
+RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-Base.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
+RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
+RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 #remove obsolete centos-vault repository
 RUN rm -f /etc/yum.repos.d/CentOS-Vault.repo;
 # add new vault centos 6 source code repository
@@ -51,12 +53,8 @@ RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
-
-
-
-
-
-
+RUN yum clean all;
+RUN yum -y install @core centos-release;
 # base install with force use http centos vault archive repo not use ssl for centos-releases
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Base.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Base.repo";
