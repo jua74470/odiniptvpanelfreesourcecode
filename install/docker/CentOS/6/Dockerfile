@@ -30,15 +30,6 @@ RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos
 RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "" >> /etc/yum.repos.d/CentOS-Source.repo;
-
-
-
-
-RUN yum clean all;
-RUN yum -y install @core centos-release;
-
-
-
 RUN echo "[extras-source]" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "name=CentOS-6 - Extras-Source" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/extras/Source/" >> /etc/yum.repos.d/CentOS-Source.repo;
@@ -47,6 +38,13 @@ RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos
 RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "" >> /etc/yum.repos.d/CentOS-Source.repo;
+
+
+RUN yum clean all;
+RUN yum -y install @core centos-release;
+
+
+
 RUN echo "[centosplus-source]" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "name=CentOS-6 - Plus-Source" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/centosplus/Source/" >> /etc/yum.repos.d/CentOS-Source.repo;
