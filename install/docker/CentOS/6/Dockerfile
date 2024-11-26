@@ -11,8 +11,6 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se
 RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
-RUN yum clean all;
-RUN yum -y install @core centos-release;
 #remove obsolete centos-vault repository
 RUN rm -f /etc/yum.repos.d/CentOS-Vault.repo;
 # add new vault centos 6 source code repository
@@ -24,6 +22,16 @@ RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos
 RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "" >> /etc/yum.repos.d/CentOS-Source.repo;
+
+
+
+RUN yum clean all;
+RUN yum -y install @core centos-release;
+
+
+
+
+
 RUN echo "[updates-source]" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "name=CentOS-6 - Updates-Source" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN echo "baseurl=http://mirror.nsc.liu.se/centos-store/centos/6/updates/Source/" >> /etc/yum.repos.d/CentOS-Source.repo;
