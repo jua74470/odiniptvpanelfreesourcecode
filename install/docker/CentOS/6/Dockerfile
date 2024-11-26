@@ -140,6 +140,7 @@ RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/epel.repo";
 RUN sed -i 's|#baseurl=http://download.fedoraproject.org/pub/|baseurl=http://mirrors.hostiserver.com/fedora/archive/|g' "/etc/yum.repos.d/epel-testing.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/epel-testing.repo";
 RUN yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm yum-utils;
+RUN ls "/etc/yum.repos.d/";
 RUN sed -i 's|#baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "/etc/yum.repos.d/remi.repo";
 RUN sed -i 's|baseurl=http://rpms.remirepo.net|baseurl=http://fr2.rpmfind.net/linux/remi|g' "/etc/yum.repos.d/remi.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/remi.repo";
