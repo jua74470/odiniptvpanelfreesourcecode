@@ -60,6 +60,7 @@ RUN echo "gpgcheck=1" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN echo "enabled=0" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
 RUN echo "metadata_expire=24h" >> /etc/yum.repos.d/CentOS-fasttrack.repo;
+RUN echo "" >> /etc/yum.repos.d/CentOS-Source.repo;
 RUN yum clean all;
 RUN yum -y install @core centos-release;
 # base install with force use http centos vault archive repo not use ssl for centos-releases
