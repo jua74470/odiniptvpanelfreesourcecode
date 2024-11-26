@@ -11,6 +11,8 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se
 RUN sed -i 's|enabled=0|enabled=1|g' "/etc/yum.repos.d/CentOS-fasttrack.repo";
 RUN sed -i 's|mirrorlist=.*|metadata_expire=24h|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://mirror.nsc.liu.se/centos-store|g' "/etc/yum.repos.d/CentOS-Debuginfo.repo";
+RUN yum clean all;
+RUN yum -y install @core centos-release;
 #remove obsolete centos-vault repository
 RUN rm -f /etc/yum.repos.d/CentOS-Vault.repo;
 # add new vault centos 6 source code repository
